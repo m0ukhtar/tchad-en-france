@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ambassade du Tchad en France | Représentation Diplomatique & Consulaire</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tchad: {
+              blue: '#002654',
+              'blue-dark': '#001938',
+              yellow: '#FFCD00',
+              'yellow-dark': '#D9AC00',
+              red: '#C8102E',
+              'red-dark': '#A00B22',
+              gold: '#D4AF37'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Gradient Tricolore Tchadien */
+    .bg-tchad-gradient {
+      background: linear-gradient(135deg, #002654 0%, #001530 60%, #000c1e 100%);
+    }
+    
+    .flag-bar {
+      background: linear-gradient(to right, #002654 33.33%, #FFCD00 33.33%, #FFCD00 66.66%, #C8102E 66.66%);
+    }
+
+    /* Subtle Glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .glass-dark {
+      background: rgba(0, 38, 84, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Custom Animations */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .animate-pulse-slow {
+      animation: pulseGlow 4s infinite ease-in-out;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #002654;
+      border-radius: 4px;
+    }
+
+    /* Container pour tout centrer */
+.header-titre-container {
+  text-align: center;
+  margin-bottom: 20px; /* Ajustez l'espace avec le texte en dessous */
+}
+
+    /* Style pour le nouveau badge "SERVICES AU PUBLIC" */
+    .badge-services {
+    display: inline-block;
+    background-color: #fce4e4; /* Rose très clair, couleur de fond du badge */
+    color: #e63946;           /* Rouge, couleur du texte du badge */
+    font-size: 0.75rem;       /* Petite taille de police */
+    font-weight: 700;         /* Texte en gras */
+    text-transform: uppercase; /* Tout en majuscules */
+    padding: 5px 15px;        /* Espace intérieur */
+    border-radius: 15px;      /* Bords arrondis */
+    margin-bottom: 10px;      /* Espace avec le titre en dessous */
+    }
+
+    /* Style pour le titre principal */
+    .titre-principal {
+    color: #1a1a1a;           /* Couleur sombre, presque noir */
+    font-size: 2.5rem;        /* Taille de police assez grande */
+    font-weight: 800;         /* Très gras */
+    margin: 0;                /* Reset des marges par défaut */
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-tchad-blue selection:text-white">
+
+  <!-- ========================================== -->
+  <!-- BANDEAU ACCENT TRICOLORE NATIONAL          -->
+  <!-- ========================================== -->
+  <div class="h-1.5 w-full flag-bar fixed top-0 left-0 z-[60]"></div>
+
+  <!-- ========================================== -->
+  <!-- BARRE D'INFORMATIONS ET URGENCE (TOPBAR)   -->
+  <!-- ========================================== -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 pt-3 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-6 flex-wrap justify-center md:justify-start">
+        <span class="flex items-center gap-1.5 text-tchad-yellow font-medium">
+          <i class="fa-solid fa-building-columns"></i>
+          République du Tchad — Unité • Travail • Progrès
+        </span>
+        <span class="hidden lg:inline-block text-slate-600">|</span>
+        <span class="hidden lg:flex items-center gap-1.5 text-slate-300">
+          <i class="fa-solid fa-clock text-tchad-yellow"></i>
+          Consulat : Lun - Jeu 10h-13h & 14h-17h | Ven 10h-13h
+        </span>
+      </div>
+
+      <div class="flex items-center gap-4 text-slate-300">
+        <a href="tel:0145533675" class="hover:text-white transition flex items-center gap-1.5">
+          <i class="fa-solid fa-phone text-tchad-yellow"></i>
+          <span>01 45 53 36 75</span>
+        </a>
+        <span class="text-slate-600">|</span>
+        <div class="flex items-center gap-3">
+          <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-tchad-blue hover:text-white transition flex items-center justify-center" aria-label="Facebook"><i class="fab fa-facebook-f text-[11px]"></i></a>
+          <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-black hover:text-white transition flex items-center justify-center" aria-label="Twitter X"><i class="fab fa-x-twitter text-[11px]"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- NOUVEAU HEADER / NAVIGATION MODERNE       -->
+  <!-- ========================================== -->
+  <header class="sticky top-[0px] z-40 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- LOGO INSTITUTIONNEL ET TITRE -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center p-1 bg-slate-50 rounded-xl border border-slate-200 group-hover:border-tchad-blue transition">
+            <img src="uploads/armoiries-tchad.svg" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Coat_of_arms_of_Chad.svg/300px-Coat_of_arms_of_Chad.svg.png';" alt="Armoiries du Tchad" class="max-h-full max-w-full object-contain">
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-tchad-red">République du Tchad</span>
+            <span class="text-lg sm:text-xl font-extrabold text-tchad-blue tracking-tight leading-tight group-hover:text-blue-900 transition">
+              Ambassade en France
+            </span>
+            <span class="text-[10px] font-medium text-slate-500 hidden sm:inline-block">Délégation permanente auprès de l'UNESCO & OIF</span>
+          </div>
+        </a>
+
+        <!-- MENU PRINCIPAL DESKTOP -->
+        <nav class="hidden xl:flex items-center space-x-1 text-xs font-bold uppercase tracking-wider text-slate-700">
+          <a href="#ambassade" class="px-3 py-2 rounded-lg bg-tchad-blue/10 text-tchad-blue font-extrabold hover:bg-slate-100 hover:text-tchad-blue transition">L'Ambassade</a>
+          <a href="#demarches" class="px-3 py-2 rounded-lg hover:bg-tchad-blue hover:text-white transition">Consulat & Visas</a>
+          <a href="#actualites" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Actualités</a>
+          <a href="#tchad" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Le Tchad</a>
+          <a href="#economie" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Économie & Tourisme</a>
+          <a href="#equipe" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">L'Équipe</a>
+          <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Contact</a>
+        </nav>
+
+        <!-- BOUTONS D'ACTION RAPIDE & MENU MOBILE -->
+        <!-- <div class="flex items-center gap-3">
+          <button onclick="openAppointmentModal()" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-tchad-blue to-tchad-blue-dark text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl hover:shadow-lg hover:shadow-tchad-blue/30 hover:scale-[1.02] transition active:scale-95">
+            <i class="fa-regular fa-calendar-check text-tchad-yellow"></i>
+            <span>Prendre RDV</span>
+          </button>-->
+
+          <button onclick="openSearchModal()" class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 hover:bg-tchad-blue hover:text-white transition flex items-center justify-center" aria-label="Rechercher">
+            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+          </button>
+
+          <!-- Bouton Hamburguer Mobile -->
+          <button onclick="toggleMobileMenu()" class="xl:hidden w-10 h-10 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 transition flex items-center justify-center" aria-label="Menu Mobile">
+            <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TIROIR MENU MOBILE -->
+    <div id="mobileMenu" class="hidden xl:hidden bg-white border-b border-slate-200 shadow-2xl transition-all">
+      <div class="px-4 pt-3 pb-6 space-y-2 text-sm font-bold uppercase">
+        <a href="#ambassade" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">L'Ambassade</a>
+        <a href="#demarches" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg bg-tchad-blue/10 text-tchad-blue font-extrabold">Consulat & Démarches</a>
+        <a href="#actualites" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Actualités & Direct</a>
+        <a href="#tchad" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Le Tchad & Culture</a>
+        <a href="#economie" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Économie & Investissement</a>
+        <a href="#equipe" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">L'Équipe diplomatique</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Contact & Horaires</a>
+        <div class="pt-2 border-t border-slate-100">
+          <button onclick="openAppointmentModal(); toggleMobileMenu()" class="w-full bg-tchad-blue text-white py-3 rounded-xl font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+            <i class="fa-regular fa-calendar-check text-tchad-yellow"></i>
+            Prendre Rendez-vous Consulaire
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================== -->
+  <!-- BANNIÈRE HERO MAGNIFIQUE (AMBASSADRICE)     -->
+  <!-- ========================================== -->
+  <section id="ambassade" class="relative bg-tchad-gradient text-white overflow-hidden py-12 lg:py-20 border-b border-slate-800">
+    
+    <!-- MOTIFS DE FOND ET EFFETS LUMINEUX -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#FFCD00_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-tchad-blue/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-tchad-red/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- COLONNE GAUCHE : TEXTES INSTITUTIONNELS & ACCÈS RAPIDE -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold text-tchad-yellow">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+             Représentation Officielle en France, UNESCO & OIF
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+            Bienvenue à l'Ambassade du <span class="text-transparent bg-clip-text bg-gradient-to-r from-tchad-yellow via-amber-300 to-yellow-500">Tchad en France</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal">
+            Passerelle diplomatique, consulaire et culturelle entre le Tchad et la France. Nous accompagnons les ressortissants tchadiens et facilitons vos démarches administratives, de visa et d'investissement.
+          </p>
+
+          <!-- CITATION AMBASSADRICE SHORT PREVIEW -->
+          <!-- <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-4 sm:p-5 text-left relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-2 h-full bg-tchad-yellow"></div>
+            <i class="fa-solid fa-quote-left text-3xl text-tchad-yellow/30 absolute top-2 right-4"></i>
+            <p class="text-sm italic text-slate-200 relative z-10">
+              « Cet espace se veut un lieu convivial et dynamique pour les échanges et une passerelle entre vous et nous. Soyez les bienvenus au Tchad virtuel. »
+            </p>
+            <p class="text-xs font-bold text-tchad-yellow mt-2 uppercase tracking-wider">
+              — S.E.M. Amina Priscille Longoh, Ambassadrice
+            </p>
+          </div>-->
+
+          <!-- BOUTONS D'ACTION BANNIÈRE -->
+          <div class="pt-2 flex flex-wrap gap-4 justify-center lg:justify-start">
+            <a href="#demarches" class="bg-gradient-to-r from-tchad-yellow to-yellow-500 text-tchad-blue-dark font-extrabold text-sm px-6 py-3.5 rounded-xl shadow-lg hover:shadow-tchad-yellow/20 hover:scale-[1.02] transition flex items-center gap-2">
+              <i class="fa-solid fa-passport"></i>
+              <span>Services Consulaires & Visas</span>
+            </a>
+
+            <a href="#mot-ambassadrice" class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-6 py-3.5 rounded-xl border border-white/20 backdrop-blur-sm transition flex items-center gap-2">
+              <i class="fa-solid fa-circle-info text-tchad-yellow"></i>
+              <span>Mot de l'Ambassadrice</span>
+            </a>
+          </div>
+
+          <!-- PETITE GALERIE PAYSAGE DU TCHAD (MINI BANNÈRE VIGNETTES) -->
+          <div class="pt-4 border-t border-white/10">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-slate-400 block mb-3 text-center lg:text-left">
+              Patrimoine & Paysages du Tchad
+            </span>
+            <div class="grid grid-cols-5 sm:grid-cols-9 gap-2">
+              <img src="photo1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=150';" alt="Tchad 1" class="h-12 w-full object-cover rounded-lg border border-white/20 hover:scale-110 transition duration-300 shadow cursor-pointer" title="Paysage Tchadien">
+              <img src="photo2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516426122078-c23e76319801?w=150';" alt="Tchad 2" class="h-12 w-full object-cover rounded-lg border border-white/20 hover:scale-110 transition duration-300 shadow cursor-pointer" title="Faune Zakouma">
+              <img src="photo3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=150';" alt="Tchad 3" class="h-12 w-full object-cover rounded-lg border border-white/20 hover:scale-110 transition duration-300 shadow cursor-pointer" title="Culture">
+              <img src="photo4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=150';" alt="Tchad 4" class="h-12 w-full object-cover rounded-lg border border-white/20 hover:scale-110 transition duration-300 shadow cursor-pointer" title="Massif de l'Ennedi">
+              <img src="photo5.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=150';" alt="Tchad 5" class="h-12 w-full object-cover rounded-lg border border-white/20 hover:scale-110 transition duration-300 shadow cursor-pointer" title="Lacs d'Ounianga">
+              <img src="photo6.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1448375240586-882707db888b?w=150';" alt="Tchad 6" class="h-12 w-full object-cover rounded-lg border border-white/20 hover:scale-110 transition duration-300 shadow cursor-pointer" title="Oiseaux">
+              <img src="photo7.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?w=150';" alt="Tchad 7" class="h-12 w-full object-cover rounded-lg border border-white/20 hover:scale-110 transition duration-300 shadow cursor-pointer" title="Parc National">
+              <img src="photo8.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518684079-3c830dcef090?w=150';" alt="Tchad 8" class="h-12 w-full object-cover rounded-lg border border-white/20 hover:scale-110 transition duration-300 shadow cursor-pointer" title="Architecture">
+              <img src="photo9.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=150';" alt="Tchad 9" class="h-12 w-full object-cover rounded-lg border border-white/20 hover:scale-110 transition duration-300 shadow cursor-pointer" title="Artisanat">
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLONNE DROITE : NOUVELLE BANNIÈRE PORTRAIT AMBASSADRICE -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          
+          <!-- CADRE DE BANNIÈRE HAUT DE GAMME -->
+          <div class="relative w-full max-w-md">
+            
+            <!-- HALO DU FOND TRICOLORE -->
+            <div class="absolute -inset-2 bg-gradient-to-r from-tchad-blue via-tchad-yellow to-tchad-red rounded-3xl blur-xl opacity-60 animate-pulse-slow"></div>
+
+            <!-- CONTENEUR DE LA PHOTO -->
+            <div class="relative bg-slate-900 rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl">
+              
+              <div class="relative h-[420px] sm:h-[480px] w-full overflow-hidden group">
+                <!-- PHOTO AMBASSADRICE -->
+                <img src="ambassadrice.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800';" alt="Amina Priscille Longoh - Ambassadrice du Tchad" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition duration-700">
+                
+                <!-- OVERLAY DÉGRADÉ INFÉRIEUR POUR LISIBILITÉ -->
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+
+                <!-- DRAPEAU FLOTTANT BADGE -->
+                <!-- <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 flex items-center gap-2">
+                  <img src="drapeau-tchad.png" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/4/4b/Flag_of_Chad.svg';" alt="Drapeau du Tchad" class="w-5 h-3.5 object-cover rounded shadow-sm">
+                  <span class="text-[10px] font-bold tracking-wider text-white uppercase">S.E.M.</span>
+                </div>-->
+
+                <!-- LEGENDE DU PORTRAIT -->
+                <div class="absolute bottom-0 left-0 right-0 p-6 text-left space-y-1">
+                  <span class="px-2.5 py-1 rounded bg-tchad-yellow text-tchad-blue-dark text-[10px] font-extrabold uppercase tracking-widest inline-block mb-1">
+                    Ambassadrice Extraordinaire & Plénipotentiaire
+                  </span>
+                  <h2 class="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">
+                    AMINA PRISCILLE LONGOH
+                  </h2>
+                  <p class="text-xs text-slate-300 font-medium">
+                    Ambassadrice du Tchad en France
+                  </p>
+                  <p class="text-[11px] text-tchad-yellow font-medium">
+                    Représentante permanente auprès de l'UNESCO & OIF
+                  </p>
+                </div>
+              </div>
+
+              <!-- BANDEAU SOUS-PHOTO HORAIRES ET DRAPEAU -->
+              <div class="bg-slate-950/90 p-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-certificate text-tchad-yellow text-base"></i>
+                  <span>Mission Diplomatique Officielle</span>
+                </div>
+                <a href="#mot-ambassadrice" class="text-tchad-yellow font-bold hover:underline text-xs flex items-center gap-1">
+                  En savoir plus <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- BANDEAU DERNIÈRE MINUTE (TICKER D'ACTU)    -->
+  <!-- ========================================== -->
+  <section class="bg-amber-50 border-y border-amber-200/80 py-3 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        
+        <div class="flex items-center gap-2 bg-tchad-red text-white text-xs font-black uppercase px-3 py-1.5 rounded-lg flex-shrink-0 shadow-sm">
+          <i class="fa-solid fa-bolt animate-bounce"></i>
+          <span>Dernière minute</span>
+        </div>
+
+        <div class="overflow-hidden w-full text-xs font-medium text-slate-800">
+          <div class="flex items-center gap-8 animate-none md:animate-marquee whitespace-normal md:whitespace-nowrap">
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-chevron-right text-tchad-blue"></i>
+              Messe d'inauguration du pontificat du Pape Léon XIV, le Tchad représenté par l'Ambassadeur auprès du Saint-Siège.
+            </span>
+            <span class="hidden md:inline text-slate-300">•</span>
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-chevron-right text-tchad-blue"></i>
+              Le Président de la République a rencontré les Présidents et Secrétaires Généraux des Partis politiques.
+            </span>
+            <span class="hidden md:inline text-slate-300">•</span>
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-chevron-right text-tchad-blue"></i>
+              Allah-Maye Halina, nouveau Premier Ministre du Tchad.
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION MOT DE L'AMBASSADRICE & DIRECT TV  -->
+  <!-- ========================================== -->
+  <section id="mot-ambassadrice" class="py-16 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- MOT DE L'AMBASSADRICE (COLONNE 7) -->
+        <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/80 relative">
+          
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-1.5 h-8 bg-tchad-blue rounded-full"></span>
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-widest text-tchad-blue">Message Officiel</span>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Le Mot de l'Ambassadrice</h2>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-6 mb-6 items-center sm:items-start bg-white p-5 rounded-2xl border border-slate-200">
+            <img src="ambassadrice1.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300';" alt="Amina Priscille Longoh" class="w-28 h-36 object-cover rounded-xl shadow-md border-2 border-tchad-yellow flex-shrink-0">
+            <div class="space-y-1 text-center sm:text-left">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-tchad-red bg-red-50 px-2 py-0.5 rounded">Chef de Mission</span>
+              <h3 class="text-lg font-extrabold text-slate-900 uppercase">AMINA PRISCILLE LONGOH</h3>
+              <p class="text-sm font-bold text-tchad-blue">Ambassadrice du Tchad en France</p>
+              <p class="text-xs text-slate-500">Représentante permanente auprès de l'UNESCO et de l'OIF</p>
+            </div>
+            <!-- LIEN BIOGRAPHIE / BIBLIOGRAPHIE -->
+                <div class="pt-2">
+                    <a href="biographie-ambassadrice.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-tchad-blue hover:text-blue-900 hover:underline transition-colors">
+                    <span>Biographie complète</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                    </a>
+                </div>
+          </div>
+
+          
+
+          <div class="space-y-4 text-sm text-slate-700 leading-relaxed font-normal">
+            <p class="font-bold text-slate-900 text-base">Chers (es) internautes,</p>
+            <p class="font-semibold text-tchad-blue">Bienvenue sur le portail de l'Ambassade du Tchad en France.</p>
+            <p>Cet espace se veut un lieu convivial et dynamique pour les échanges et une passerelle entre vous et nous.</p>
+            <p>Vous y trouverez les informations sur les activités de la Mission, de notre représentation auprès de l'UNESCO et de la Francophonie ainsi que les actualités nationales.</p>
+            <p>Nous rendons également disponible des informations sur les services que nous offrons, notamment la délivrance des visas et d'autres documents administratifs (carte consulaire, acte de naissance, acte de mariage et de décès...).</p>
+            <p>Nous proposerons volontiers à nos visiteurs les attractions culturelles du Tchad mais aussi le potentiel économique et les possibilités d'investissement.</p>
+            <p>En attendant la visite physique que nous espérons proche, soyez les bienvenus (es) au « Tchad virtuel ».</p>
+            <p class="italic font-bold text-tchad-blue pt-2">Bonne navigation.</p>
+          </div>
+
+        </div>
+
+        <!-- TELE TCHAD EN DIRECT & GALERIE DE MEDIAS (COLONNE 5) -->
+        <div class="lg:col-span-5 space-y-8">
+          
+          <!-- CARDE TÉLÉ TCHAD EN DIRECT -->
+          <div class="bg-slate-950 rounded-3xl p-4 shadow-2xl border border-slate-800 text-white overflow-hidden relative group">
+            
+            <div class="flex items-center justify-between mb-3 px-2">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-tchad-red animate-ping"></span>
+                <span class="text-xs font-black uppercase tracking-wider text-white">Télé Tchad en Direct</span>
+              </div>
+              <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-0.5 rounded font-mono">24/7 LIVE</span>
+            </div>
+
+            <!-- APERÇU LECTEUR VIDÉO -->
+            <div class="relative aspect-video rounded-2xl overflow-hidden bg-slate-900 border border-white/10">
+                <iframe 
+                    src="https://webcast.streamakaci.com/tchad/" 
+                    class="w-full h-full border-0" 
+                    allow="autoplay; encrypted-media; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="text-xs text-slate-400 mt-3 px-2 text-center">
+              Suivez l'actualité nationale, les journaux télévisés et les allocutions officielles en direct de N'Djaména.
+            </p>
+          </div>
+
+          <!-- PHOTO RENCONTRE OFFICIELLE (CARROUSEL) -->
+            <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-200">
+            <div class="relative h-56 rounded-2xl overflow-hidden mb-2 group">
+                
+                <!-- Conteneur de l'image -->
+                <div id="slider" class="w-full h-full relative"></div>
+
+                <!-- Flèches de navigation au survol -->
+                <button onclick="prevSlide()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                <i class="fas fa-chevron-left text-xs"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+
+                <!-- Crédit photo -->
+                <div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded pointer-events-none z-10">
+                © presidence.td
+                </div>
+            </div>
+
+            <p class="text-xs font-bold text-slate-800">
+                Coopération Bilatérale & Rencontres Diplomatiques Haut Niveau
+            </p>
+            </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- DÉMARCHES CONSULAIRES ET SERVICES RAPIDES  -->
+  <!-- ========================================== -->
+  <section id="demarches" class="py-16 bg-slate-100 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-tchad-red bg-red-50 px-3 py-1 rounded-full">Services au Public</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">Documents & Démarches Consulaires</h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Consultez les procédures, les tarifs et prenez rendez-vous en ligne pour vos démarches administratives auprès du Consulat du Tchad à Paris.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- CARD 1 : VISAS -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-slate-200 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-tchad-blue/10 text-tchad-blue flex items-center justify-center text-xl group-hover:bg-tchad-blue group-hover:text-white transition">
+              <i class="fa-solid fa-passport"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Demande de Visa</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Délivrance de visas de tourisme, d'affaires, de séjour et d'entrée officielle sur le territoire tchadien.
+            </p>
+          </div>
+          <button onclick="openServiceModal('visa')" class="mt-6 text-xs font-bold text-tchad-blue group-hover:text-tchad-red flex items-center gap-1 transition">
+            <span>Procédure & Pièces</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- CARD 2 : CARTE CONSULAIRE -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-slate-200 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-tchad-yellow/20 text-tchad-blue flex items-center justify-center text-xl group-hover:bg-tchad-yellow group-hover:text-tchad-blue transition">
+              <i class="fa-solid fa-id-card"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Carte Consulaire</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Immatriculation consulaire obligatoire pour tous les ressortissants tchadiens résidant en France.
+            </p>
+          </div>
+          <button onclick="openServiceModal('carte')" class="mt-6 text-xs font-bold text-tchad-blue group-hover:text-tchad-red flex items-center gap-1 transition">
+            <span>Procédure & Pièces</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- CARD 3 : ÉTAT CIVIL -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-slate-200 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-tchad-red/10 text-tchad-red flex items-center justify-center text-xl group-hover:bg-tchad-red group-hover:text-white transition">
+              <i class="fa-solid fa-file-signature"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Actes d'État Civil</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Établissement, transcription et légalisation d'actes de naissance, mariage, décès et légalisations.
+            </p>
+          </div>
+          <button onclick="openServiceModal('etatcivil')" class="mt-6 text-xs font-bold text-tchad-blue group-hover:text-tchad-red flex items-center gap-1 transition">
+            <span>Procédure & Pièces</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- CARD 4 : PASSEPORTS -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-slate-200 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center text-xl group-hover:bg-slate-900 group-hover:text-white transition">
+              <i class="fa-solid fa-book-bookmark"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Passeport Biométrique</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Assistance pour le renouvellement et l'enrôlement des passeports biométriques tchadiens.
+            </p>
+          </div>
+          <button onclick="openServiceModal('passeport')" class="mt-6 text-xs font-bold text-tchad-blue group-hover:text-tchad-red flex items-center gap-1 transition">
+            <span>Procédure & Pièces</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION ACTUALITÉS & MÉDIAS                -->
+  <!-- ========================================== -->
+  <section id="actualites" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-tchad-blue">Informations</span>
+          <h2 class="text-3xl font-black text-slate-900">Actualités & Vidéos Officielles</h2>
+        </div>
+        <a href="#" class="text-xs font-bold text-tchad-blue hover:text-tchad-red uppercase tracking-wider flex items-center gap-1">
+          Toutes les vidéos & actualités <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
+      </div>
+
+      <!-- GALERIE VIDÉOS -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- VIDÉO 1 -->
+         
+        <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 group">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden">
+            <img src="https://www.onama.td/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-11.26.50.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?w=600';" alt="BIE Paris" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+            <button onclick="playVideoModal('https://youtu.be/KHPIw5Zm2TU?si=A2Ohvl5J7FMrdj00', '173e session BIE Paris')" class="absolute inset-0 m-auto w-12 h-12 bg-tchad-red text-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+              <i class="fas fa-play ml-1 text-sm"></i>
+            </button>
+          </div>
+          <div class="p-4">
+            <span class="text-[10px] font-extrabold text-tchad-yellow-dark uppercase bg-amber-50 px-2 py-0.5 rounded">Économie & Investissements</span>
+            <p class="text-xs font-bold text-slate-800 mt-2 line-clamp-2">
+              Lancement officiel du Plan National du Développement « 𝗧𝗖𝗛𝗔𝗗 𝗖𝗢𝗡𝗡𝗘𝗫𝗜𝗢𝗡 𝟮𝟬𝟯𝟬 » à Abu Dhabi
+            </p>
+          </div>
+        </div>
+
+        <!-- VIDÉO 2 -->
+        <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 group">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden">
+            <img src="uploads/2023/12/pape3-768x512.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600';" alt="Lettres de créance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+            <button onclick="playVideoModal('/uploads/2023/12/lettres-sem.mp4')" class="absolute inset-0 m-auto w-12 h-12 bg-tchad-red text-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+              <i class="fas fa-play ml-1 text-sm"></i>
+            </button>
+          </div>
+          <div class="p-4">
+            <span class="text-[10px] font-extrabold text-tchad-blue uppercase bg-blue-50 px-2 py-0.5 rounded">Diplomatie</span>
+            <p class="text-xs font-bold text-slate-800 mt-2 line-clamp-2">
+              Présentation des Lettres de créance de SEM. Ahmad Makaila à sa Sainteté le Pape François.
+            </p>
+          </div>
+        </div>
+
+        
+
+        <!-- VIDÉO 3 -->
+        <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 group">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden">
+            <img src="video2-thumb.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=600';" alt="Conférence UNESCO" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+            <button onclick="playVideoModal('42e Conférence Générale UNESCO')" class="absolute inset-0 m-auto w-12 h-12 bg-tchad-red text-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+              <i class="fas fa-play ml-1 text-sm"></i>
+            </button>
+          </div>
+          <div class="p-4">
+            <span class="text-[10px] font-extrabold text-tchad-red uppercase bg-red-50 px-2 py-0.5 rounded">UNESCO</span>
+            <p class="text-xs font-bold text-slate-800 mt-2 line-clamp-2">
+              42ème session de la conférence générale de l'Unesco — Déclaration officielle du Tchad.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION L'ÉQUIPE DIPLOMATIQUE             -->
+  <!-- ========================================== -->
+  <section id="equipe" class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-tchad-blue">Organigramme</span>
+        <h2 class="text-3xl font-black text-slate-900 mt-1">L'Équipe de l'Ambassade</h2>
+        <p class="text-xs text-slate-600 mt-2">
+          Les conseillers, attachés et diplomates au service de la représentation du Tchad en France.
+        </p>
+      </div>
+
+      <!-- TÊTE DE RÉSEAU : AMBASSADRICE -->
+      <div class="flex justify-center mb-10">
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 text-center max-w-sm w-full relative">
+          <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-tchad-blue shadow-md mb-3">
+            <img src="ambassadrice1.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300';" alt="SEM. AMINA PRISCILLE LONGOH" class="w-full h-full object-cover">
+          </div>
+          <span class="text-[10px] font-extrabold text-tchad-red uppercase tracking-widest bg-red-50 px-3 py-0.5 rounded-full">Chef de Mission</span>
+          <h3 class="mt-2 text-base font-black text-slate-900 uppercase">SEM. AMINA PRISCILLE LONGOH</h3>
+          <p class="text-xs text-tchad-blue font-bold">Ambassadrice Extraordinaire et Plénipotentiaire</p>
+        </div>
+      </div>
+
+      <!-- GRILLE DES MEMBRES DE L'ÉQUIPE -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        
+        <!-- MEMBRE 1 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col justify-between hover:border-tchad-blue transition">
+          <div class="space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-slate-200 bg-slate-100">
+              <img src="uploads/2025/05/avatar-placeholder.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200';" alt="Djamal KOGRI" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="text-xs font-extrabold text-slate-900">Djamal KOGRI</h4>
+              <p class="text-[11px] font-bold text-tchad-blue">Premier Conseiller</p>
+            </div>
+          </div>
+          <button onclick="toggleMission('m1')" class="mt-4 text-[11px] text-slate-500 hover:text-tchad-blue font-semibold flex items-center justify-center gap-1">
+            <span>Sa Mission</span> <i class="fas fa-chevron-down text-[9px]"></i>
+          </button>
+          <div id="m1" class="hidden mt-2 pt-2 border-t text-[10px] text-slate-600 text-left">
+            Coordination des affaires politiques et suivi diplomatique bilatéral.
+          </div>
+        </div>
+
+        <!-- MEMBRE 2 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col justify-between hover:border-tchad-blue transition">
+          <div class="space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-slate-200 bg-slate-100">
+              <img src="uploads/2026/03/moussa-allatchi.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200';" alt="Colonel Moussa ALLATCHI" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="text-xs font-extrabold text-slate-900">Colonel Moussa ALLATCHI</h4>
+              <p class="text-[11px] font-bold text-tchad-blue">Attaché de Défense</p>
+            </div>
+          </div>
+          <button onclick="toggleMission('m2')" class="mt-4 text-[11px] text-slate-500 hover:text-tchad-blue font-semibold flex items-center justify-center gap-1">
+            <span>Sa Mission</span> <i class="fas fa-chevron-down text-[9px]"></i>
+          </button>
+          <div id="m2" class="hidden mt-2 pt-2 border-t text-[10px] text-slate-600 text-left">
+            Coopération militaire et sécuritaire Tchad–France.
+          </div>
+        </div>
+
+        <!-- MEMBRE 3 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col justify-between hover:border-tchad-blue transition">
+          <div class="space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-slate-200 bg-slate-100">
+              <img src="uploads/2025/06/adoum-sougui.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200';" alt="Adoum Sougui" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="text-xs font-extrabold text-slate-900">Adoum Sougui</h4>
+              <p class="text-[11px] font-bold text-tchad-blue">Conseiller Culturel</p>
+            </div>
+          </div>
+          <button onclick="toggleMission('m3')" class="mt-4 text-[11px] text-slate-500 hover:text-tchad-blue font-semibold flex items-center justify-center gap-1">
+            <span>Sa Mission</span> <i class="fas fa-chevron-down text-[9px]"></i>
+          </button>
+          <div id="m3" class="hidden mt-2 pt-2 border-t text-[10px] text-slate-600 text-left">
+            Promotions culturelles, éducatives et affaires Francophonie/UNESCO.
+          </div>
+        </div>
+
+        <!-- MEMBRE 4 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col justify-between hover:border-tchad-blue transition">
+          <div class="space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-slate-200 bg-slate-100">
+              <img src="uploads/2023/09/sarra-makki-adam.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200';" alt="Mme Sarra Makki Adam" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="text-xs font-extrabold text-slate-900">Mme Sarra Makki Adam</h4>
+              <p class="text-[11px] font-bold text-tchad-blue">Conseillère Économique</p>
+            </div>
+          </div>
+          <button onclick="toggleMission('m4')" class="mt-4 text-[11px] text-slate-500 hover:text-tchad-blue font-semibold flex items-center justify-center gap-1">
+            <span>Sa Mission</span> <i class="fas fa-chevron-down text-[9px]"></i>
+          </button>
+          <div id="m4" class="hidden mt-2 pt-2 border-t text-[10px] text-slate-600 text-left">
+            Promotions des investissements et échanges commerciaux bilatéraux.
+          </div>
+        </div>
+
+        <!-- MEMBRE 5 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col justify-between hover:border-tchad-blue transition">
+          <div class="space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-slate-200 bg-slate-100">
+              <img src="uploads/hunwanou-alexis-adams.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200';" alt="Hunwanou Alexis Adams" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="text-xs font-extrabold text-slate-900">Hunwanou Alexis Adams</h4>
+              <p class="text-[11px] font-bold text-tchad-blue">1er secrétaire</p>
+            </div>
+          </div>
+          <button onclick="toggleMission('m5')" class="mt-4 text-[11px] text-slate-500 hover:text-tchad-blue font-semibold flex items-center justify-center gap-1">
+            <span>Sa Mission</span> <i class="fas fa-chevron-down text-[9px]"></i>
+          </button>
+          <div id="m5" class="hidden mt-2 pt-2 border-t text-[10px] text-slate-600 text-left">
+            Promotions des investissements et échanges commerciaux bilatéraux.
+          </div>
+        </div>
+        <!-- MEMBRE 6 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col justify-between hover:border-tchad-blue transition">
+          <div class="space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-slate-200 bg-slate-100">
+              <img src="uploads/maamoune-charfadine.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200';" alt="Maamoune Charfadine" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="text-xs font-extrabold text-slate-900">Maamoune Charfadine</h4>
+              <p class="text-[11px] font-bold text-tchad-blue">2eme secrétaire</p>
+            </div>
+          </div>
+          <button onclick="toggleMission('m6')" class="mt-4 text-[11px] text-slate-500 hover:text-tchad-blue font-semibold flex items-center justify-center gap-1">
+            <span>Sa Mission</span> <i class="fas fa-chevron-down text-[9px]"></i>
+          </button>
+          <div id="m6" class="hidden mt-2 pt-2 border-t text-[10px] text-slate-600 text-left">
+            Promotions des investissements et échanges commerciaux bilatéraux.
+          </div>
+        </div>
+        <!-- MEMBRE 7 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col justify-between hover:border-tchad-blue transition">
+          <div class="space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-slate-200 bg-slate-100">
+              <img src="uploads/gapili-misset.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200';" alt="Mme Sarra Makki Adam" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="text-xs font-extrabold text-slate-900">Gapili Misset</h4>
+              <p class="text-[11px] font-bold text-tchad-blue">Attaché de presse</p>
+            </div>
+          </div>
+          <button onclick="toggleMission('m7')" class="mt-4 text-[11px] text-slate-500 hover:text-tchad-blue font-semibold flex items-center justify-center gap-1">
+            <span>Sa Mission</span> <i class="fas fa-chevron-down text-[9px]"></i>
+          </button>
+          <div id="m7" class="hidden mt-2 pt-2 border-t text-[10px] text-slate-600 text-left">
+            Promotions des investissements et échanges commerciaux bilatéraux.
+          </div>
+        </div>
+        <!-- MEMBRE 8 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col justify-between hover:border-tchad-blue transition">
+          <div class="space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-slate-200 bg-slate-100">
+              <img src="uploads/2025/10/youssouf-choua.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200';" alt="Mme Sarra Makki Adam" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="text-xs font-extrabold text-slate-900">Youssouf Choua,</h4>
+              <p class="text-[11px] font-bold text-tchad-blue">Attaché d’ambassade</p>
+            </div>
+          </div>
+          <button onclick="toggleMission('m8')" class="mt-4 text-[11px] text-slate-500 hover:text-tchad-blue font-semibold flex items-center justify-center gap-1">
+            <span>Sa Mission</span> <i class="fas fa-chevron-down text-[9px]"></i>
+          </button>
+          <div id="m8" class="hidden mt-2 pt-2 border-t text-[10px] text-slate-600 text-left">
+            Promotions des investissements et échanges commerciaux bilatéraux.
+          </div>
+        </div>
+
+    </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION : LE TCHAD ================= -->
+<section id="tchad" class="py-16 bg-slate-50/70 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- En-tête de section style minimaliste -->
+    <div class="flex items-center gap-4 mb-10">
+      <div class="h-10 w-1.5 bg-tchad-gold rounded-full"></div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-wide text-slate-800 uppercase leading-tight font-sans">
+        <span class="text-tchad-blue">LE TCHAD</span>
+      </h2>
+    </div>
+
+    <!-- Carte principale d'informations -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/80">
+      
+      <!-- Carte interactive du Tchad -->
+      <div class="lg:col-span-5 flex flex-col items-center justify-between p-6 bg-gradient-to-b from-slate-50 to-amber-50/30 rounded-xl border border-slate-200/60 group">
+        <div class="w-full text-right">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-tchad-gold/20 text-tchad-blue">
+            Afrique Centrale
+          </span>
+        </div>
+        <img 
+          src="carte-tchad.jpg" 
+          alt="Carte du Tchad" 
+          class="max-h-72 w-auto object-contain my-4 drop-shadow-md group-hover:scale-105 transition-transform duration-300" 
+          onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/2/23/Chad_location_map.svg';"
+        >
+        <div class="text-center pt-2 border-t border-slate-200/60 w-full">
+          <p class="text-xs font-semibold text-slate-700">Cœur du continent africain</p>
+          <p class="text-[11px] text-slate-500">Superficie : 1 284 000 km²</p>
+        </div>
+      </div>
+
+      <!-- Données Structurées -->
+      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        
+        <!-- Symboles -->
+        <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-200 hover:border-slate-300 transition-colors">
+          <h3 class="font-bold text-tchad-blue uppercase tracking-wider text-xs border-b border-slate-200 pb-2 mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-landmark text-tchad-gold"></i>
+            Symboles & Institutions
+          </h3>
+          <ul class="space-y-2 text-slate-700">
+            <li class="flex justify-between"><span class="text-slate-500">Devise :</span> <strong class="text-slate-900">Unité — Travail — Progrès</strong></li>
+            <li class="flex justify-between"><span class="text-slate-500">Hymne :</span> <strong class="text-slate-900">La Tchadienne</strong></li>
+            <li class="flex justify-between"><span class="text-slate-500">République :</span> <strong class="text-slate-900">28 nov. 1958</strong></li>
+            <li class="flex justify-between"><span class="text-slate-500">Indépendance :</span> <strong class="text-slate-900">11 août 1960</strong></li>
+            <li class="flex justify-between"><span class="text-slate-500">Langues :</span> <strong class="text-slate-900">Arabe & Français</strong></li>
+          </ul>
+        </div>
+
+        <!-- Démographie -->
+        <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-200 hover:border-slate-300 transition-colors">
+          <h3 class="font-bold text-tchad-blue uppercase tracking-wider text-xs border-b border-slate-200 pb-2 mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-earth-africa text-tchad-gold"></i>
+            Démographie & Climat
+          </h3>
+          <ul class="space-y-2 text-slate-700">
+            <li class="flex justify-between"><span class="text-slate-500">Capitale :</span> <strong class="text-slate-900">N'Djaména</strong></li>
+            <li class="flex justify-between"><span class="text-slate-500">Population :</span> <strong class="text-slate-900">~ 18,4 M hab.</strong></li>
+            <li class="flex justify-between"><span class="text-slate-500">Villes :</span> <strong class="text-slate-900">Abéché, Moundou, Sarh</strong></li>
+            <li class="flex justify-between"><span class="text-slate-500">Monnaie :</span> <strong class="text-slate-900">Franc CFA (XAF)</strong></li>
+            <li class="flex justify-between"><span class="text-slate-500">Religions :</span> <strong class="text-slate-900">Islam, Christianisme, Animisme</strong></li>
+          </ul>
+        </div>
+
+        <!-- Hautes Autorités -->
+        <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-200 sm:col-span-2">
+          <h3 class="font-bold text-tchad-blue uppercase tracking-wider text-xs border-b border-slate-200 pb-2 mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-user-shield text-tchad-gold"></i>
+            Hautes Autorités de l'État
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="bg-white p-3 rounded-lg border border-slate-200/80 shadow-2xs">
+              <p class="text-[10px] uppercase font-bold text-slate-400">Président de la République</p>
+              <p class="font-bold text-slate-900 text-xs mt-0.5">Mahamat Idriss DÉBY ITNO</p>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200/80 shadow-2xs">
+              <p class="text-[10px] uppercase font-bold text-slate-400">Premier Ministre</p>
+              <p class="font-bold text-slate-900 text-xs mt-0.5">Allah-Maye Halina</p>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200/80 shadow-2xs">
+              <p class="text-[10px] uppercase font-bold text-slate-400">Présidence Ass. Nationale</p>
+              <p class="font-bold text-slate-900 text-xs mt-0.5">Ali KOLOTOU TCHAÏMI</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- UNESCO -->
+        <div class="bg-amber-50/60 p-5 rounded-xl border border-amber-200 sm:col-span-2 text-tchad-blue">
+          <div class="flex items-center gap-2 font-bold text-xs text-amber-900 mb-1">
+            <i class="fa-solid fa-award text-tchad-gold text-base"></i>
+            Patrimoine Mondial de l'UNESCO
+          </div>
+          <div class="grid sm:grid-cols-2 gap-2 mt-2 text-[11px] text-slate-700">
+            <div class="flex items-start gap-1.5">
+              <span class="text-tchad-gold font-bold">•</span>
+              <span><strong>Les Lacs d'Ounianga</strong> — Inscrits au patrimoine en 2012</span>
+            </div>
+            <div class="flex items-start gap-1.5">
+              <span class="text-tchad-gold font-bold">•</span>
+              <span><strong>Le Massif de l'Ennedi</strong> — Paysage naturel & culturel (2016)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION : ÉCONOMIE & TOURISME ================= -->
+<section id="economie" class="py-16 bg-white border-b border-slate-200 space-y-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    
+    <!-- En-tête de section -->
+    <div class="flex items-center gap-4">
+      <div class="h-10 w-1.5 bg-tchad-gold rounded-full"></div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-wide text-slate-800 uppercase leading-tight font-sans">
+        ÉCONOMIE &<br/><span class="text-tchad-blue">TOURISME</span>
+      </h2>
+    </div>
+
+    <!-- Découvrir le Tchad (Tourisme) -->
+    <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-2">
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-tchad-gold">Patrimoine & Nature</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-0.5">Découvrir les Merveilles du Tchad</h3>
+        </div>
+        <span class="text-xs text-slate-500 bg-white px-3 py-1 rounded-full border border-slate-200">
+          Des paysages uniques au monde
+        </span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <!-- Carte Tourisme 1 -->
+        
+        <a href="parc-zakouma.html"class="relative rounded-xl overflow-hidden group h-44 border border-slate-200/80 shadow-xs">
+          <img src="tourisme3.jpg" alt="Parc de Zakouma" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=400';">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold tracking-wide">Parc de Zakouma</span>
+          </div>
+        </a>
+
+        <!-- Carte Tourisme 2 -->
+        <a href="https://whc.unesco.org/fr/list/1475/"class="relative rounded-xl overflow-hidden group h-44 border border-slate-200/80 shadow-xs">
+          <img src="uploads/tourisme4.jpg" alt="Massif de l'Ennedi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=400';">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold tracking-wide">Massif de l'Ennedi</span>
+          </div>
+        </a>
+
+        <!-- Carte Tourisme 3 -->
+        <a href="dary.html"class="relative rounded-xl overflow-hidden group h-44 border border-slate-200/80 shadow-xs">
+          <img src="uploads/dary.png" alt="Tradition Nomade" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=400';">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold tracking-wide">Le Festival Dary</span>
+          </div>
+        </a>
+
+        <!-- Carte Tourisme 4 -->
+        <a href="culture.html" class="relative rounded-xl overflow-hidden group h-44 border border-slate-200/80 shadow-xs">
+          <img src="tourisme1.jpg" alt="Culture & Marchés" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=400';">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold tracking-wide">Culture & Marchés</span>
+          </div>
+        </a>
+
+        
+
+        
+
+        
+      </div>
+    </div>
+
+    <!-- Investir au Tchad (Économie) -->
+    <div class="bg-gradient-to-br from-slate-900 via-tchad-blue-dark to-slate-900 text-white p-6 sm:p-8 rounded-2xl shadow-md border border-slate-800">
+      <div class="mb-6">
+        <span class="text-[11px] font-bold uppercase tracking-widest text-tchad-gold">Économie & Opportunités</span>
+        <h3 class="text-2xl font-bold mt-1">Investir au Tchad</h3>
+        <p class="text-xs text-slate-300 mt-2 leading-relaxed max-w-2xl">
+          Au cœur d'une Afrique en pleine mutation, le Tchad dispose d'un potentiel économique considérable. Découvrez les secteurs prioritaires et bénéficiez de cadres incitatifs pour le développement de vos projets.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 mb-8">
+        <div class="bg-white/10 backdrop-blur-sm p-3.5 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center gap-2 hover:bg-white/15 transition-colors">
+          <i class="fa-solid fa-seedling text-tchad-gold text-lg"></i>
+          <span class="text-xs font-medium">Agriculture</span>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm p-3.5 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center gap-2 hover:bg-white/15 transition-colors">
+          <i class="fa-solid fa-bolt text-tchad-gold text-lg"></i>
+          <span class="text-xs font-medium">Énergie</span>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm p-3.5 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center gap-2 hover:bg-white/15 transition-colors">
+          <i class="fa-solid fa-road text-tchad-gold text-lg"></i>
+          <span class="text-xs font-medium">Infrastructures</span>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm p-3.5 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center gap-2 hover:bg-white/15 transition-colors">
+          <i class="fa-solid fa-gem text-tchad-gold text-lg"></i>
+          <span class="text-xs font-medium">Mines</span>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm p-3.5 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center gap-2 hover:bg-white/15 transition-colors">
+          <i class="fa-solid fa-industry text-tchad-gold text-lg"></i>
+          <span class="text-xs font-medium">Industrie</span>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm p-3.5 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center gap-2 hover:bg-white/15 transition-colors">
+          <i class="fa-solid fa-microchip text-tchad-gold text-lg"></i>
+          <span class="text-xs font-medium">Numérique</span>
+        </div>
+      </div>
+
+        <a href="uploads/documentation/35-Projets-Gouvt.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tchad-gold hover:bg-amber-400 text-slate-900 font-bold px-6 py-2.5 rounded-xl transition-all text-xs shadow-sm">
+            <span>Découvrir les opportunités d'investissement</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
+    </div>
+
+    <!-- Section Diaspora -->
+    <div id="diaspora" class="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-slate-800">
+      <div class="max-w-3xl mb-6">
+        <span class="text-[11px] font-bold uppercase tracking-widest text-tchad-gold">Communauté & Réseau</span>
+        <h3 class="text-2xl font-bold mt-1">La Diaspora Tchadienne en France</h3>
+        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+          Dynamic et engagée, la diaspora constitue un vecteur d'échange culturel, économique et intellectuel entre la France et le Tchad.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 flex flex-col justify-between hover:border-tchad-gold/50 transition-colors">
+          <div>
+            <h4 class="font-bold text-tchad-gold text-sm mb-1">Diaspora Tchadienne de France (DTF)</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Créée en 2009, la DTF impulse une dynamique de solidarité, d'entraide et d'intégration citoyenne au sein de la communauté.
+            </p>
+          </div>
+          <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs text-tchad-gold font-semibold hover:underline mt-4">
+            Visiter le site officiel <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 flex flex-col justify-between hover:border-tchad-gold/50 transition-colors">
+          <div>
+            <h4 class="font-bold text-tchad-gold text-sm mb-1">Groupe d'Entraide (GESST)</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Association Loi 1901 visant à soutenir le développement de l'enseignement supérieur et des initiatives de santé au Tchad.
+            </p>
+          </div>
+          <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs text-tchad-gold font-semibold hover:underline mt-4">
+            Visiter le site officiel <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ========================================== -->
+  <!-- INFOS PRATIQUES, ACCÈS ET CONTACT          -->
+  <!-- ========================================== -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-gradient-to-r from-slate-900 to-tchad-blue-dark rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <span class="px-3 py-1 bg-tchad-yellow text-tchad-blue-dark text-xs font-black uppercase tracking-widest rounded-md">
+              Coordonnées & Accès
+            </span>
+            <h2 class="text-3xl font-black text-white">Nous Contacter & Nous Rendre Visite</h2>
+
+            <div class="space-y-4 text-sm text-slate-200">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-location-dot text-tchad-yellow text-lg mt-1"></i>
+                <div>
+                  <p class="font-bold text-white">Ambassade du Tchad à Paris</p>
+                  <p>65 rue des Belles Feuilles, 75116 Paris, France</p>
+                  <p class="text-xs text-slate-400 mt-0.5">Métro : Porte Dauphine (Ligne 2) ou Victor Hugo (Ligne 2) | RER C : Avenue Foch</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-phone text-tchad-yellow text-lg"></i>
+                <p>Téléphone : <a href="tel:0145533675" class="font-bold text-white hover:underline">01 45 53 36 75</a></p>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-clock text-tchad-yellow text-lg mt-1"></i>
+                <div>
+                  <p class="font-bold text-white">Horaires d'ouverture Consulat :</p>
+                  <p class="text-xs">Lundi au Jeudi : 10h00 – 13h00 & 14h00 – 17h00</p>
+                  <p class="text-xs">Vendredi : 10h00 – 13h00</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2 flex flex-wrap gap-4">
+              <button onclick="openAppointmentModal()" class="bg-tchad-yellow text-tchad-blue-dark font-extrabold text-xs px-6 py-3 rounded-xl hover:bg-yellow-400 transition">
+                Prendre Rendez-vous
+              </button>
+              <a href="https://maps.google.com/?q=65+rue+des+Belles+Feuilles+75116+Paris" target="_blank" class="bg-white/10 hover:bg-white/20 text-white font-bold text-xs px-6 py-3 rounded-xl border border-white/20 transition flex items-center gap-2">
+                <i class="fa-solid fa-map-location-dot text-tchad-yellow"></i>
+                <span>Itinéraire Google Maps</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-slate-200">
+            <h3 class="text-base font-bold text-white mb-4">Envoyer un message</h3>
+            <form onsubmit="handleContactSubmit(event)" class="space-y-3">
+              <input type="text" placeholder="Votre nom complet" required class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-tchad-yellow">
+              <input type="email" placeholder="Votre adresse email" required class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-tchad-yellow">
+              <textarea placeholder="Votre message..." rows="3" required class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-tchad-yellow"></textarea>
+              <button type="submit" class="w-full bg-tchad-blue hover:bg-blue-800 text-white font-bold text-xs py-2.5 rounded-lg transition">
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- FOOTER INSTITUTIONNEL                     -->
+  <!-- ========================================== -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-slate-800">
+        
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <img src="uploads/armoiries-tchad.svg" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Coat_of_arms_of_Chad.svg/300px-Coat_of_arms_of_Chad.svg.png';" alt="Armoiries" class="w-8 h-8 object-contain">
+            <span class="text-sm font-black text-white">Ambassade du Tchad</span>
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">
+            Représentation diplomatique et consulaire de la République du Tchad en République Française.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Accès Rapides</h4>
+          <ul class="space-y-2">
+            <li><a href="#ambassade" class="hover:text-tchad-yellow transition">L'Ambassade</a></li>
+            <li><a href="#demarches" class="hover:text-tchad-yellow transition">Visas & Passeports</a></li>
+            <li><a href="#actualites" class="hover:text-tchad-yellow transition">Actualités</a></li>
+            <li><a href="#equipe" class="hover:text-tchad-yellow transition">L'Équipe</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Liens Utiles</h4>
+          <ul class="space-y-2">
+            <li><a href="https://presidence.td" target="_blank" class="hover:text-tchad-yellow transition">Présidence de la République</a></li>
+            <li><a href="https://unesco.org" target="_blank" class="hover:text-tchad-yellow transition">UNESCO</a></li>
+            <li><a href="https://francophonie.org" target="_blank" class="hover:text-tchad-yellow transition">Organisation Internationale de la Francophonie</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Réseaux Sociaux</h4>
+          <div class="flex items-center gap-3 mb-4">
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:bg-tchad-blue hover:text-white transition flex items-center justify-center"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:bg-black hover:text-white transition flex items-center justify-center"><i class="fab fa-x-twitter"></i></a>
+          </div>
+          <p class="text-[10px] text-slate-500">© 2026 Ambassade du Tchad en France. Tous droits réservés.</p>
+        </div>
+
+      </div>
+
+      <div class="text-center text-[11px] text-slate-500">
+        Portail officiel d'information diplomatique et consulaire • République du Tchad
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ========================================== -->
+  <!-- MODALS INTERACTIFS                         -->
+  <!-- ========================================== -->
+
+  <!-- MODAL RENDEZ-VOUS CONSULAIRE -->
+  <div id="appointmentModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-slate-200">
+      <button onclick="closeAppointmentModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-tchad-blue text-white flex items-center justify-center text-lg">
+          <i class="fa-regular fa-calendar-check"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-black text-slate-900">Prendre Rendez-vous Consulaire</h3>
+          <p class="text-xs text-slate-500">Choisissez le motif et la date souhaitée</p>
+        </div>
+      </div>
+
+      <form onsubmit="handleAppointmentSubmit(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Motif du rendez-vous</label>
+          <select required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium">
+            <option value="">Sélectionnez un service...</option>
+            <option value="visa">Demande de Visa</option>
+            <option value="carte">Carte Consulaire</option>
+            <option value="passeport">Passeport Biométrique</option>
+            <option value="etatcivil">Légalisation & État Civil</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Nom complet</label>
+            <input type="text" required placeholder="Votre nom" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Téléphone</label>
+            <input type="tel" required placeholder="06..." class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Adresse Email</label>
+          <input type="email" required placeholder="exemple@email.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Date souhaitée</label>
+            <input type="date" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Heure</label>
+            <select required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+              <option value="10:00">10h00</option>
+              <option value="11:00">11h00</option>
+              <option value="12:00">12h00</option>
+              <option value="14:00">14h00</option>
+              <option value="15:00">15h00</option>
+              <option value="16:00">16h00</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-tchad-blue hover:bg-blue-900 text-white font-extrabold py-3 rounded-xl transition uppercase tracking-wider text-xs shadow-lg mt-2">
+          Confirmer la demande de rendez-vous
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- MODAL DETAILS SERVICE CONSULAIRE -->
+  <div id="serviceModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-xl rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-slate-200">
+      <button onclick="closeServiceModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div id="serviceModalContent" class="space-y-4">
+        <!-- Rempli dynamiquement en JS -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL RECHERCHE INTERACTIVE -->
+  <div id="searchModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] hidden flex items-start justify-center pt-20 p-4">
+    <div class="bg-white w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative border border-slate-200">
+      <div class="flex items-center gap-3 border-b border-slate-200 pb-4">
+        <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg"></i>
+        <input type="text" id="searchInput" placeholder="Rechercher un service, un document, un horaire..." class="w-full text-sm font-medium focus:outline-none" onkeyup="handleSearch(this.value)">
+        <button onclick="closeSearchModal()" class="text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-lg">ESC</button>
+      </div>
+
+      <div id="searchResults" class="py-4 space-y-2 text-xs text-slate-600">
+        <p class="text-slate-400 italic">Tapez votre recherche (ex: Visa, Passeport, Adresse, Horaire)...</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JS INTERACTIF -->
+  <script>
+    // Toggle Menu Mobile
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('menuIcon');
+      menu.classList.toggle('hidden');
+      if (menu.classList.contains('hidden')) {
+        icon.className = 'fa-solid fa-bars text-lg';
+      } else {
+        icon.className = 'fa-solid fa-xmark text-lg';
+      }
+    }
+
+    // Toggle Mission Membres Équipe
+    function toggleMission(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('hidden');
+    }
+
+    // Modal Rendez-vous
+    function openAppointmentModal() {
+      document.getElementById('appointmentModal').classList.remove('hidden');
+    }
+    function closeAppointmentModal() {
+      document.getElementById('appointmentModal').classList.add('hidden');
+    }
+
+    function handleAppointmentSubmit(e) {
+      e.preventDefault();
+      alert('Votre demande de rendez-vous a bien été enregistrée. Un email de confirmation vous sera envoyé.');
+      closeAppointmentModal();
+    }
+
+    // Modal Services
+    const serviceData = {
+      visa: {
+        title: "Demande de Visa pour le Tchad",
+        icon: "fa-passport",
+        content: `
+          <p class="text-xs text-slate-600 mb-3">Les demandes de visas d'entrée au Tchad nécessitent un dossier complet déposé au consulat.</p>
+          <h4 class="font-bold text-slate-900 text-xs uppercase mb-2">Pièces à fournir :</h4>
+          <ul class="list-disc list-inside text-xs text-slate-700 space-y-1 mb-4">
+            <li>Passeport original valide au moins 6 mois</li>
+            <li>2 photos d'identité récentes fond blanc</li>
+            <li>Formulaire de demande renseigné et signé</li>
+            <li>Lettre d'invitation ou réservation d'hôtel</li>
+            <li>Copie du billet d'avion aller-retour</li>
+          </ul>
+          <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 text-xs text-amber-900 font-medium">
+            Délai de traitement moyen : 5 à 7 jours ouvrés.
+          </div>
+        `
+      },
+      carte: {
+        title: "Carte Consulaire d'Immatriculation",
+        icon: "fa-id-card",
+        content: `
+          <p class="text-xs text-slate-600 mb-3">L'immatriculation consulaire est obligatoire pour tout citoyen tchadien résidant en France.</p>
+          <h4 class="font-bold text-slate-900 text-xs uppercase mb-2">Pièces à fournir :</h4>
+          <ul class="list-disc list-inside text-xs text-slate-700 space-y-1 mb-4">
+            <li>Copie du passeport ou carte nationale d'identité tchadienne</li>
+            <li>Justificatif de domicile en France (moins de 3 mois)</li>
+            <li>2 photos d'identité couleur</li>
+            <li>Titre de séjour ou récépissé en cours de validité</li>
+          </ul>
+        `
+      },
+      etatcivil: {
+        title: "Actes d'État Civil & Légalisation",
+        icon: "fa-file-signature",
+        content: `
+          <p class="text-xs text-slate-600 mb-3">Délivrance et légalisation des actes de naissance, mariage, décès et procurations.</p>
+          <h4 class="font-bold text-slate-900 text-xs uppercase mb-2">Documents requis :</h4>
+          <ul class="list-disc list-inside text-xs text-slate-700 space-y-1 mb-4">
+            <li>Copie de la carte consulaire du demandeur</li>
+            <li>Document original à légaliser</li>
+            <li>Formulaire de demande d'acte consulaire</li>
+          </ul>
+        `
+      },
+      passeport: {
+        title: "Passeport Biométrique Tchadien",
+        icon: "fa-book-bookmark",
+        content: `
+          <p class="text-xs text-slate-600 mb-3">Renouvellement et prise d'empreintes pour passeports biométriques originaux.</p>
+          <h4 class="font-bold text-slate-900 text-xs uppercase mb-2">Pièces requises :</h4>
+          <ul class="list-disc list-inside text-xs text-slate-700 space-y-1 mb-4">
+            <li>Ancien passeport original + copie</li>
+            <li>Acte de naissance sécurisé (NNI/NNP)</li>
+            <li>Carte consulaire à jour</li>
+          </ul>
+        `
+      }
+    };
+
+    function openServiceModal(type) {
+      const modal = document.getElementById('serviceModal');
+      const container = document.getElementById('serviceModalContent');
+      const data = serviceData[type];
+
+      if (data) {
+        container.innerHTML = `
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-10 h-10 rounded-xl bg-tchad-blue text-white flex items-center justify-center text-lg">
+              <i class="fa-solid ${data.icon}"></i>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">${data.title}</h3>
+          </div>
+          ${data.content}
+          <div class="pt-4 flex justify-end">
+            <button onclick="closeServiceModal(); openAppointmentModal();" class="bg-tchad-blue text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-900">
+              Prendre RDV pour ce service
+            </button>
+          </div>
+        `;
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closeServiceModal() {
+      document.getElementById('serviceModal').classList.add('hidden');
+    }
+
+    // Search Modal
+    function openSearchModal() {
+      document.getElementById('searchModal').classList.remove('hidden');
+      document.getElementById('searchInput').focus();
+    }
+    function closeSearchModal() {
+      document.getElementById('searchModal').classList.add('hidden');
+    }
+
+    function handleSearch(val) {
+      const results = document.getElementById('searchResults');
+      if (!val.trim()) {
+        results.innerHTML = '<p class="text-slate-400 italic">Tapez votre recherche (ex: Visa, Passeport, Adresse)...</p>';
+        return;
+      }
+      
+      const query = val.toLowerCase();
+      let html = '';
+
+      if ('visa'.includes(query)) {
+        html += `<div onclick="closeSearchModal(); openServiceModal('visa');" class="p-2 hover:bg-slate-100 rounded cursor-pointer font-bold text-tchad-blue">→ Demande de Visa (Procédures & Pièces)</div>`;
+      }
+      if ('passeport'.includes(query)) {
+        html += `<div onclick="closeSearchModal(); openServiceModal('passeport');" class="p-2 hover:bg-slate-100 rounded cursor-pointer font-bold text-tchad-blue">→ Passeport Biométrique Tchadien</div>`;
+      }
+      if ('horaire'.includes(query) || 'adresse'.includes(query) || 'contact'.includes(query)) {
+        html += `<div onclick="closeSearchModal(); location.href='#contact';" class="p-2 hover:bg-slate-100 rounded cursor-pointer font-bold text-tchad-blue">→ Adresse : 65 rue des Belles Feuilles, 75116 Paris (Tél : 01 45 53 36 75)</div>`;
+      }
+
+      if (!html) {
+        html = `<p class="text-slate-500">Aucun résultat spécifique pour "${val}". <a href="#contact" onclick="closeSearchModal()" class="text-tchad-blue underline">Contactez-nous</a>.</p>`;
+      }
+
+      results.innerHTML = html;
+    }
+
+    // Direct stream & video simulations
+    function playLiveStream() {
+      alert("Lancement du flux en direct ONRTV / Télé Tchad. En cours de connexion avec N'Djaména...");
+    }
+
+    function playVideoModal(videoUrl) {
+        const modal = document.getElementById('videoModal');
+        const localPlayer = document.getElementById('modalVideoPlayer');
+        const localSource = document.getElementById('modalVideoSource');
+        const youtubeIframe = document.getElementById('youtubeIframe');
+
+        // Cacher les deux lecteurs par précaution
+        localPlayer.classList.add('hidden');
+        youtubeIframe.classList.add('hidden');
+
+        // Vérifier s'il s'agit d'un lien YouTube
+        const isYouTube = videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be');
+
+        if (isYouTube) {
+            let videoId = '';
+
+            // Extraction de l'ID YouTube
+            if (videoUrl.includes('youtu.be/')) {
+                videoId = videoUrl.split('youtu.be/')[1].split('?')[0];
+            } else if (videoUrl.includes('watch?v=')) {
+                videoId = videoUrl.split('watch?v=')[1].split('&')[0];
+            }
+
+            // Configuration de l'iframe YouTube avec lecture automatique
+            youtubeIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            youtubeIframe.classList.remove('hidden');
+        } else {
+            // Fichier MP4 local
+            localSource.src = videoUrl;
+            localPlayer.load();
+            localPlayer.classList.remove('hidden');
+            localPlayer.play();
+        }
+
+        // Afficher la modale
+        modal.classList.remove('hidden');
+    }
+
+    function closeVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const localPlayer = document.getElementById('modalVideoPlayer');
+        const youtubeIframe = document.getElementById('youtubeIframe');
+
+        // Stopper le lecteur MP4
+        localPlayer.pause();
+        localSource = document.getElementById('modalVideoSource');
+        localSource.src = "";
+
+        // Stopper le lecteur YouTube (vider la source coupe immédiatement le son)
+        youtubeIframe.src = "";
+
+        // Masquer la modale
+        modal.classList.add('hidden');
+    }
+
+    
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert("Merci. Votre message a été transmis aux services de l'Ambassade.");
+    }
+
+    // Chemins mis à jour vers le dossier cooperation/
+    const images = [
+        "uploads/cooperation/00-1.jpg",
+        "uploads/cooperation/04.jpg",
+        "uploads/cooperation/05.jpg",
+        "uploads/cooperation/IMG_8086-768x573.jpg",
+        "uploads/cooperation/IMG_8087-768x1009.jpg",
+        "uploads/cooperation/IMG_8089-768x426.jpg",
+        "uploads/cooperation/IMG_8091-768x502.jpg",
+        "uploads/cooperation/IMG_8095-768x506.jpg",
+        "uploads/cooperation/IMG_9340-300x225.jpg",
+        "uploads/cooperation/IMG_9340-2048x1536.jpg",
+        "uploads/cooperation/IMG_9748-300x200.jpg",
+        "uploads/cooperation/IMG_9750-300x300.jpg",
+        "uploads/cooperation/IMG_6369-768x511.jpg",
+        "uploads/cooperation/IMG_6364-300x200.jpg",
+        "uploads/cooperation/IMG_6366-300x200.jpg",
+        "uploads/cooperation/IMG_6368-768x511.jpg"
+    ];
+
+    let currentIndex = 0;
+    const sliderElement = document.getElementById('slider');
+
+    function showSlide(index) {
+        sliderElement.innerHTML = `
+        <img src="${images[index]}" 
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600';" 
+            alt="Rencontre officielle Présidence" 
+            class="w-full h-full object-contain bg-black/90 transition-opacity duration-500">
+        `;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showSlide(currentIndex);
+    }
+
+    // Lancement automatique
+    showSlide(currentIndex);
+    setInterval(nextSlide, 3500); // Défilement toutes les 3.5 secondes
+
+  </script>
+
+  <!-- Modale Vidéo Hybride (MP4 + YouTube) -->
+    <div id="videoModal" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
+            <!-- Bouton Fermer -->
+            <button onclick="closeVideoModal()" class="absolute top-4 right-4 z-10 text-white hover:text-red-500 text-2xl font-bold bg-black/50 w-10 h-10 rounded-full flex items-center justify-center">
+                &times;
+            </button>
+            
+            <div class="aspect-video w-full">
+                <!-- Lecteur pour Fichiers MP4 locaux -->
+                <video id="modalVideoPlayer" controls class="w-full h-full hidden">
+                    <source id="modalVideoSource" src="" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+
+                <!-- Lecteur pour Liens YouTube -->
+                <iframe id="youtubeIframe" class="w-full h-full hidden" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

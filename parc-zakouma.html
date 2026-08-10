@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parc National de Zakouma — Ambassade du Tchad en France</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tchad: {
+              blue: '#002654',
+              'blue-dark': '#001938',
+              yellow: '#FFCD00',
+              'yellow-dark': '#D9AC00',
+              red: '#C8102E',
+              'red-dark': '#A00B22',
+              gold: '#D4AF37'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-full flex flex-col justify-between">
+
+  <!-- ========================================== -->
+  <!-- BANDEAU ACCENT TRICOLORE NATIONAL          -->
+  <!-- ========================================== -->
+  <div class="h-1.5 w-full flag-bar fixed top-0 left-0 z-[60]"></div>
+
+  <!-- ========================================== -->
+  <!-- BARRE D'INFORMATIONS ET URGENCE (TOPBAR)   -->
+  <!-- ========================================== -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 pt-3 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-6 flex-wrap justify-center md:justify-start">
+        <span class="flex items-center gap-1.5 text-tchad-yellow font-medium">
+          <i class="fa-solid fa-building-columns"></i>
+          République du Tchad — Unité • Travail • Progrès
+        </span>
+        <span class="hidden lg:inline-block text-slate-600">|</span>
+        <span class="hidden lg:flex items-center gap-1.5 text-slate-300">
+          <i class="fa-solid fa-clock text-tchad-yellow"></i>
+          Consulat : Lun - Jeu 10h-13h & 14h-17h | Ven 10h-13h
+        </span>
+      </div>
+
+      <div class="flex items-center gap-4 text-slate-300">
+        <a href="tel:0145533675" class="hover:text-white transition flex items-center gap-1.5">
+          <i class="fa-solid fa-phone text-tchad-yellow"></i>
+          <span>01 45 53 36 75</span>
+        </a>
+        <span class="text-slate-600">|</span>
+        <div class="flex items-center gap-3">
+          <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-tchad-blue hover:text-white transition flex items-center justify-center" aria-label="Facebook"><i class="fab fa-facebook-f text-[11px]"></i></a>
+          <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-black hover:text-white transition flex items-center justify-center" aria-label="Twitter X"><i class="fab fa-x-twitter text-[11px]"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-white border-b border-slate-200 px-6 lg:px-12 py-3.5 shadow-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="inline-flex items-center gap-2 text-xs font-bold text-tchad-blue hover:text-tchad-red transition-colors">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Retour au site de l'Ambassade</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- BANNIÈRE HERO -->
+  <div class="relative bg-slate-900 text-white py-20 px-6 lg:px-12 overflow-hidden">
+    <img 
+      src="C9A7044.jpg" 
+      alt="Safari Zakouma" 
+      class="absolute inset-0 w-full h-full object-cover "
+    >
+    <div class="relative max-w-7xl mx-auto space-y-3">
+      <span class="bg-tchad-gold text-tchad-blue text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+        Sanctuaire Sauvage d'Afrique Centrale
+      </span>
+      <h1 class="text-3xl lg:text-5xl font-black uppercase tracking-tight">
+        Parc National de Zakouma
+      </h1>
+      <p class="text-sm lg:text-base text-slate-200 max-w-2xl leading-relaxed">
+        Une success-story mondiale en matière de conservation de la faune, abritant l'une des plus importantes populations d'éléphants et de girafes de Kordofan du continent.
+      </p>
+    </div>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="max-w-7xl w-full mx-auto px-6 lg:px-12 py-8 space-y-10 flex-1">
+
+    <!-- PRÉSENTATION & ENJEUX -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Carte principale -->
+      <div class="lg:col-span-2 bg-white rounded-2xl p-6 lg:p-8 border border-slate-200 shadow-sm space-y-4">
+        <div class="space-y-1">
+          <p class="text-[9px] uppercase tracking-[0.2em] text-tchad-red font-bold">Un joyau préservé</p>
+          <h2 class="text-2xl font-bold text-tchad-blue">Un modèle mondial de conservation</h2>
+        </div>
+        <p class="text-xs lg:text-sm text-slate-600 leading-relaxed">
+          Créé en 1963, le Parc National de Zakouma couvre près de 3 050 km² dans le sud-est du Tchad. Géré en partenariat avec l'ONG <strong>African Parks</strong> depuis 2010, le parc a connu une restauration spectaculaire, mettant un frein quasi total au braconnage et permettant la renaissance de son écosystème unique.
+        </p>
+        <p class="text-xs lg:text-sm text-slate-600 leading-relaxed">
+          Zakouma est aujourd'hui considéré comme l'un des espaces sauvages les plus préservés d'Afrique centrale, offrant un refuge vital pour une biodiversité extraordinaire.
+        </p>
+
+        <!-- Chiffres clés -->
+        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-100">
+          <div class="text-center p-3 bg-slate-50 rounded-xl">
+            <p class="text-lg lg:text-2xl font-black text-tchad-blue">3 050 km²</p>
+            <p class="text-[10px] text-slate-500 font-bold uppercase mt-0.5">Superficie</p>
+          </div>
+          <div class="text-center p-3 bg-slate-50 rounded-xl">
+            <p class="text-lg lg:text-2xl font-black text-tchad-gold">+380</p>
+            <p class="text-[10px] text-slate-500 font-bold uppercase mt-0.5">Espèces d'oiseaux</p>
+          </div>
+          <div class="text-center p-3 bg-slate-50 rounded-xl">
+            <p class="text-lg lg:text-2xl font-black text-tchad-red">50%+</p>
+            <p class="text-[10px] text-slate-500 font-bold uppercase mt-0.5">Girafes de Kordofan</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloc Infos Pratiques Visiteurs -->
+      <div class="bg-gradient-to-br from-tchad-blue to-slate-900 text-white rounded-2xl p-6 border border-slate-700 shadow-sm flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 text-tchad-gold">
+            <i class="fa-solid fa-compass text-lg"></i>
+            <h3 class="font-bold text-sm uppercase tracking-wider">Guide du Voyageur</h3>
+          </div>
+
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-calendar-days text-tchad-gold mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Meilleure période :</strong>
+                Décembre à Avril (saison sèche).
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-plane text-tchad-gold mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Accès :</strong>
+                Vols charters depuis N'Djamena vers la piste d'atterrissage du parc.
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-passport text-tchad-gold mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Formalités :</strong>
+                Visa touristique délivré auprès de nos services consulaires.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <a href="visas.html" class="mt-6 block text-center bg-tchad-gold text-tchad-blue font-bold text-xs py-2.5 px-4 rounded-xl hover:bg-yellow-400 transition-colors">
+          Demander un visa touristique
+        </a>
+      </div>
+
+    </section>
+
+    <!-- FAUNE EMBLÉMATIQUE -->
+    <section class="space-y-4">
+      <div class="flex items-center gap-3">
+        <div>
+          <p class="text-[9px] uppercase tracking-[0.2em] text-tchad-red font-bold">Biodiversité</p>
+          <h2 class="text-xl font-bold text-tchad-blue">Espèces Emblématiques</h2>
+        </div>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <article class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm space-y-2">
+          <div class="w-10 h-10 rounded-lg bg-tchad-blue/10 text-tchad-blue flex items-center justify-center text-lg mb-1">
+            <i class="fa-solid fa-paw"></i>
+          </div>
+          <h3 class="font-bold text-tchad-blue text-sm">Les Éléphants</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Troupeaux majestueux désormais en sécurité, symboles de la renaissance du parc après des années de protection intense.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm space-y-2">
+          <div class="w-10 h-10 rounded-lg bg-tchad-gold/20 text-tchad-blue flex items-center justify-center text-lg mb-1">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="font-bold text-tchad-blue text-sm">Girafes de Kordofan</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Zakouma abrite plus de la moitié de la population mondiale de cette sous-espèce menacée d'extinction.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm space-y-2">
+          <div class="w-10 h-10 rounded-lg bg-tchad-red/10 text-tchad-red flex items-center justify-center text-lg mb-1">
+            <i class="fa-solid fa-feather"></i>
+          </div>
+          <h3 class="font-bold text-tchad-blue text-sm">Avifaune Exceptionnelle</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Un paradis pour l'observation des oiseaux, notamment lors du rassemblement autour des points d'eau permanents.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm space-y-2">
+          <div class="w-10 h-10 rounded-lg bg-tchad-blue/10 text-tchad-blue flex items-center justify-center text-lg mb-1">
+            <i class="fa-solid fa-hippo"></i>
+          </div>
+          <h3 class="font-bold text-tchad-blue text-sm">Grands Carnivores</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Lions, léopards et guépards cohabitent au cœur des plaines inondables avec les buffles et diverses antilopes.
+          </p>
+        </article>
+
+      </div>
+    </section>
+    <!-- SECTION MÉDIAS : GALERIE & VIDÉO -->
+    <section class="space-y-4">
+      <div class="flex items-center gap-3">
+        <div>
+          <p class="text-[9px] uppercase tracking-[0.2em] text-tchad-red font-bold">Immersion Visuelle</p>
+          <h2 class="text-xl font-bold text-tchad-blue">Galerie & Vidéos</h2>
+        </div>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Galerie Photos (2 Colonnes) -->
+        <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <!-- Photo 1 -->
+          <div class="relative group rounded-xl overflow-hidden shadow-sm aspect-video bg-slate-200 border border-slate-200">
+            <img 
+              src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" 
+              alt="Troupeau d'éléphants à Zakouma" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-3 opacity-90 group-hover:opacity-100 transition-opacity">
+              <p class="text-xs font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-camera text-tchad-gold"></i>
+                Grands troupeaux d'éléphants
+              </p>
+            </div>
+          </div>
+
+          <!-- Photo 2 -->
+          <div class="relative group rounded-xl overflow-hidden shadow-sm aspect-video bg-slate-200 border border-slate-200">
+            <img 
+              src="https://images.unsplash.com/photo-1534567153574-2b12153a87f0?w=800" 
+              alt="Girafes de Kordofan" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-3 opacity-90 group-hover:opacity-100 transition-opacity">
+              <p class="text-xs font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-camera text-tchad-gold"></i>
+                Girafes de Kordofan au coucher du soleil
+              </p>
+            </div>
+          </div>
+
+          <!-- Photo 3 -->
+          <div class="relative group rounded-xl overflow-hidden shadow-sm aspect-video bg-slate-200 border border-slate-200">
+            <img 
+              src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800" 
+              alt="Safari dans la plaine" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-3 opacity-90 group-hover:opacity-100 transition-opacity">
+              <p class="text-xs font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-camera text-tchad-gold"></i>
+                Safari guidé au cœur de la plaine
+              </p>
+            </div>
+          </div>
+
+          <!-- Photo 4 -->
+          <div class="relative group rounded-xl overflow-hidden shadow-sm aspect-video bg-slate-200 border border-slate-200">
+            <img 
+              src="https://images.unsplash.com/photo-1504173010664-32509aeebb62?w=800" 
+              alt="Avifaune du parc" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-3 opacity-90 group-hover:opacity-100 transition-opacity">
+              <p class="text-xs font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-camera text-tchad-gold"></i>
+                Rassemblement d'oiseaux migrateurs
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Lecteur Vidéo (1 Colonne) -->
+        <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-[9px] uppercase tracking-widest text-tchad-red font-bold flex items-center gap-1.5 mb-1">
+              <i class="fa-solid fa-circle-play"></i> Documentaire
+            </span>
+            <h3 class="font-bold text-tchad-blue text-sm">Découvrir Zakouma en vidéo</h3>
+            <p class="text-xs text-slate-500 mt-1">Aperçu du parc et du travail de conservation d'African Parks.</p>
+          </div>
+
+          <!-- Conteneur Vidéo YouTube (Ratio 16/9) -->
+          <div class="relative w-full rounded-xl overflow-hidden aspect-video bg-slate-900 border border-slate-200">
+            <iframe 
+              class="w-full h-full"
+              src="https://youtu.be/rplzhCHcOe8?si=RiyHcYXuhm1DWpd3" 
+              title="Reportage Parc National de Zakouma, credit : African Parks"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <p class="text-[10px] text-slate-400 italic text-center">
+            Vidéo officielle de présentation de la faune du Tchad.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-3 text-center text-xs text-slate-400">
+    &copy; Ambassade de la République du Tchad en France — Tous droits réservés.
+  </footer>
+
+</body>
+</html>

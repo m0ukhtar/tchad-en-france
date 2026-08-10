@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biographie — S.E. Amina Priscille Longoh</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tchad: {
+              blue: '#002654',
+              'blue-dark': '#001938',
+              yellow: '#FFCD00',
+              'yellow-dark': '#D9AC00',
+              red: '#C8102E',
+              'red-dark': '#A00B22',
+              gold: '#D4AF37'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-full flex flex-col justify-between">
+
+  <!-- ========================================== -->
+  <!-- BANDEAU ACCENT TRICOLORE NATIONAL          -->
+  <!-- ========================================== -->
+  <div class="h-1.5 w-full flag-bar fixed top-0 left-0 z-[60]"></div>
+
+  <!-- ========================================== -->
+  <!-- BARRE D'INFORMATIONS ET URGENCE (TOPBAR)   -->
+  <!-- ========================================== -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 pt-3 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-6 flex-wrap justify-center md:justify-start">
+        <span class="flex items-center gap-1.5 text-tchad-yellow font-medium">
+          <i class="fa-solid fa-building-columns"></i>
+          République du Tchad — Unité • Travail • Progrès
+        </span>
+        <span class="hidden lg:inline-block text-slate-600">|</span>
+        <span class="hidden lg:flex items-center gap-1.5 text-slate-300">
+          <i class="fa-solid fa-clock text-tchad-yellow"></i>
+          Consulat : Lun - Jeu 10h-13h & 14h-17h | Ven 10h-13h
+        </span>
+      </div>
+
+      <div class="flex items-center gap-4 text-slate-300">
+        <a href="tel:0145533675" class="hover:text-white transition flex items-center gap-1.5">
+          <i class="fa-solid fa-phone text-tchad-yellow"></i>
+          <span>01 45 53 36 75</span>
+        </a>
+        <span class="text-slate-600">|</span>
+        <div class="flex items-center gap-3">
+          <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-tchad-blue hover:text-white transition flex items-center justify-center" aria-label="Facebook"><i class="fab fa-facebook-f text-[11px]"></i></a>
+          <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-black hover:text-white transition flex items-center justify-center" aria-label="Twitter X"><i class="fab fa-x-twitter text-[11px]"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-white border-b border-slate-200 px-6 lg:px-12 py-3.5 shadow-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="inline-flex items-center gap-2 text-xs font-bold text-tchad-blue hover:text-tchad-red transition-colors">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Retour au site de l'Ambassade</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- NOUVEAU HEADER / NAVIGATION MODERNE       -->
+  <!-- ========================================== -->
+  <!-- <header class="sticky top-[33px] z-40 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- LOGO INSTITUTIONNEL ET TITRE -->
+        <!-- <a href="#" class="flex items-center gap-3 group">
+          <div class="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center p-1 bg-slate-50 rounded-xl border border-slate-200 group-hover:border-tchad-blue transition">
+            <img src="uploads/armoiries-tchad.svg" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Coat_of_arms_of_Chad.svg/300px-Coat_of_arms_of_Chad.svg.png';" alt="Armoiries du Tchad" class="max-h-full max-w-full object-contain">
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-tchad-red">République du Tchad</span>
+            <span class="text-lg sm:text-xl font-extrabold text-tchad-blue tracking-tight leading-tight group-hover:text-blue-900 transition">
+              Ambassade en France
+            </span>
+            <span class="text-[10px] font-medium text-slate-500 hidden sm:inline-block">Délégation permanente auprès de l'UNESCO & OIF</span>
+          </div>
+        </a>
+
+        <!-- MENU PRINCIPAL DESKTOP -->
+        <!-- <nav class="hidden xl:flex items-center space-x-1 text-xs font-bold uppercase tracking-wider text-slate-700">
+          <a href="#ambassade" class="px-3 py-2 rounded-lg bg-tchad-blue/10 text-tchad-blue font-extrabold hover:bg-slate-100 hover:text-tchad-blue transition">L'Ambassade</a>
+          <a href="#demarches" class="px-3 py-2 rounded-lg hover:bg-tchad-blue hover:text-white transition">Consulat & Visas</a>
+          <a href="#actualites" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Actualités</a>
+          <a href="#tchad" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Le Tchad</a>
+          <a href="#economie" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Économie & Tourisme</a>
+          <a href="#equipe" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">L'Équipe</a>
+          <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Contact</a>
+        </nav>
+
+        <!-- BOUTONS D'ACTION RAPIDE & MENU MOBILE -->
+        <!-- <div class="flex items-center gap-3">
+          <button onclick="openAppointmentModal()" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-tchad-blue to-tchad-blue-dark text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl hover:shadow-lg hover:shadow-tchad-blue/30 hover:scale-[1.02] transition active:scale-95">
+            <i class="fa-regular fa-calendar-check text-tchad-yellow"></i>
+            <span>Prendre RDV</span>
+          </button>-->
+
+          <!-- <button onclick="openSearchModal()" class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 hover:bg-tchad-blue hover:text-white transition flex items-center justify-center" aria-label="Rechercher">
+            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+          </button>
+
+          <!-- Bouton Hamburguer Mobile -->
+          <!-- <button onclick="toggleMobileMenu()" class="xl:hidden w-10 h-10 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 transition flex items-center justify-center" aria-label="Menu Mobile">
+            <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TIROIR MENU MOBILE -->
+    <!--<div id="mobileMenu" class="hidden xl:hidden bg-white border-b border-slate-200 shadow-2xl transition-all">
+      <div class="px-4 pt-3 pb-6 space-y-2 text-sm font-bold uppercase">
+        <a href="#ambassade" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">L'Ambassade</a>
+        <a href="#demarches" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg bg-tchad-blue/10 text-tchad-blue font-extrabold">Consulat & Démarches</a>
+        <a href="#actualites" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Actualités & Direct</a>
+        <a href="#tchad" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Le Tchad & Culture</a>
+        <a href="#economie" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Économie & Investissement</a>
+        <a href="#equipe" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">L'Équipe diplomatique</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Contact & Horaires</a>
+        <div class="pt-2 border-t border-slate-100">
+          <button onclick="openAppointmentModal(); toggleMobileMenu()" class="w-full bg-tchad-blue text-white py-3 rounded-xl font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+            <i class="fa-regular fa-calendar-check text-tchad-yellow"></i>
+            Prendre Rendez-vous Consulaire
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>-->
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="max-w-7xl w-full mx-auto px-6 lg:px-12 py-8 space-y-8 flex-1">
+
+    <!-- CARTE D'IDENTITÉ / PROFIL -->
+    <section class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-[auto_1fr] lg:grid-cols-[auto_1fr_320px] gap-8 items-center">
+      
+      <!-- Photo -->
+      <div class="relative justify-self-center">
+        <img
+          src="ambassadrice1.png"
+          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400';"
+          alt="Amina Priscille Longoh"
+          class="w-36 h-44 object-cover rounded-xl shadow-md border-2 border-slate-100"
+        >
+        <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-tchad-red text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm whitespace-nowrap">
+          Chef de Mission
+        </span>
+      </div>
+
+      <!-- Infos Principales -->
+      <div class="space-y-3">
+        <div>
+          <span class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-tchad-red">Notice Biographique</span>
+          <h1 class="text-2xl lg:text-3xl font-black text-tchad-blue tracking-tight uppercase mt-1">
+            AMINA PRISCILLE LONGOH
+          </h1>
+          <p class="text-xs lg:text-sm font-semibold text-tchad-blue mt-0.5">
+            Ambassadrice Extraordinaire et Plénipotentiaire du Tchad en France
+          </p>
+        </div>
+
+        <p class="text-xs text-slate-600 leading-relaxed max-w-xl">
+          Représentante permanente auprès de l'UNESCO et Conseillère spéciale, représentante personnelle du Chef de l'État auprès de l'OIF.
+        </p>
+
+        <!-- Badges clé -->
+        <div class="flex flex-wrap gap-3 pt-2">
+          <div class="bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-cake-candles text-tchad-gold text-xs"></i>
+            <div>
+              <p class="text-[9px] uppercase text-slate-400 font-bold leading-none">Naissance</p>
+              <p class="font-bold text-xs text-tchad-blue mt-0.5">1991 — Sarh (Tchad)</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-graduation-cap text-tchad-gold text-xs"></i>
+            <div>
+              <p class="text-[9px] uppercase text-slate-400 font-bold leading-none">Formation</p>
+              <p class="font-bold text-xs text-tchad-blue mt-0.5">Master MBA & Gestion de Projets</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module Livre / Publication -->
+        <div class="bg-gradient-to-br from-tchad-blue to-slate-900 text-white rounded-xl p-5 border border-slate-700 shadow-sm flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-3">
+                <span class="text-[9px] uppercase tracking-widest text-tchad-gold font-bold flex items-center gap-1.5">
+                <i class="fa-solid fa-book-bookmark"></i> Publication
+                </span>
+                <span class="bg-tchad-gold/20 text-tchad-gold text-[9px] font-bold px-2 py-0.5 rounded-full border border-tchad-gold/30">
+                Avril 2026
+                </span>
+            </div>
+
+            <!-- Intégration de l'image de couverture -->
+            <div class="flex flex-col items-center gap-4">
+                <div class="w-24 h-32 md:w-28 md:h-36 bg-slate-800 rounded-lg border border-tchad-gold/30 flex items-center justify-center p-2 shadow-inner overflow-hidden">
+                    <!-- Remplacer 'chemin/vers/la/photo_du_livre.jpg' par le vrai chemin -->
+                    <img 
+                        src="uploads/confidences.jpg" 
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=200';" 
+                        alt="Couverture du livre" 
+                        class="w-full h-full object-contain"
+                    >
+                </div>
+                <div class="text-center space-y-1">
+                <h3 class="text-sm font-bold text-tchad-gold leading-tight">Confidences</h3>
+                <p class="text-[10px] text-slate-300"><strong>Éditeur :</strong> L'Harmattan</p>
+                <p class="text-[10px] text-slate-400 leading-tight">
+                    Autobiographie retraçant son parcours engagé de la société civile aux fonctions ministérielles.
+                </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SECTION TIMELINE -->
+    <section class="space-y-4">
+      <div class="flex items-center gap-3">
+        <div>
+          <p class="text-[9px] uppercase tracking-[0.2em] text-tchad-red font-bold">Parcours Vivant</p>
+          <h2 class="text-xl font-bold text-tchad-blue">Biographie Synthétique</h2>
+        </div>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Étape 1 -->
+        <article class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:border-tchad-blue/30 transition-colors">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-7 h-7 flex items-center justify-center rounded-lg bg-tchad-blue/10 text-tchad-blue font-black text-xs">01</span>
+            <h3 class="font-bold text-tchad-blue text-sm">Origines & Formation</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Née en 1991 à Sarh (Tchad), elle accomplit son parcours universitaire jusqu’à l'obtention d’un Master MBA en administration des affaires et gestion de projets.
+          </p>
+        </article>
+
+        <!-- Étape 2 -->
+        <article class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:border-tchad-blue/30 transition-colors">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-7 h-7 flex items-center justify-center rounded-lg bg-tchad-gold/20 text-tchad-blue font-black text-xs">02</span>
+            <h3 class="font-bold text-tchad-blue text-sm">Privé & Humanitaire</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Débuts professionnels chez Glencore dans le secteur pétrolier. Engagement social fort comme fondatrice de la <strong>Fondation Tchad Help</strong> pour l'éducation et les femmes.
+          </p>
+        </article>
+
+        <!-- Étape 3 -->
+        <article class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:border-tchad-blue/30 transition-colors">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-7 h-7 flex items-center justify-center rounded-lg bg-tchad-red/10 text-tchad-red font-black text-xs">03</span>
+            <h3 class="font-bold text-tchad-blue text-sm">Action Ministérielle</h3>
+          </div>
+          <ul class="text-xs text-slate-600 space-y-1.5">
+            <li><strong>2019 :</strong> Directrice Générale de la Maison de la Femme.</li>
+            <li><strong>2020 :</strong> Nommée Ministre de la Femme et de la Solidarité à 29 ans.</li>
+            <li><strong>2021–2024 :</strong> Reconduite durant la transition.</li>
+          </ul>
+        </article>
+
+        <!-- Étape 4 -->
+        <article class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:border-tchad-blue/30 transition-colors">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-7 h-7 flex items-center justify-center rounded-lg bg-tchad-blue/10 text-tchad-blue font-black text-xs">04</span>
+            <h3 class="font-bold text-tchad-blue text-sm">Diplomatie</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Première femme nommée Ambassadrice du Tchad en France. Représentante permanente auprès de l'UNESCO et du Conseil permanent de la Francophonie (OIF).
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-3 text-center text-xs text-slate-400">
+    &copy; Ambassade de la République du Tchad en France — Tous droits réservés.
+  </footer>
+
+</body>
+</html>
