@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full bg-slate-950">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Back-Office Consulaire | Ambassade du Tchad</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['"Plus Jakarta Sans"', "sans-serif"] },
+            colors: {
+              tchad: {
+                blue: "#002654",
+                "blue-dark": "#001938",
+                yellow: "#FFCD00",
+                red: "#C8102E",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .tchad-flag-stripe {
+        background: linear-gradient(
+          90deg,
+          #002654 33.33%,
+          #ffcd00 33.33%,
+          #ffcd00 66.66%,
+          #c8102e 66.66%
+        );
+      }
+      .bg-embassy-pattern {
+        background-color: #020617;
+        background-image:
+          radial-gradient(#002654 1px, transparent 1px),
+          radial-gradient(#ffcd00 1px, #020617 1px);
+        background-size: 40px 40px;
+        background-position:
+          0 0,
+          20px 20px;
+        background-opacity: 0.15;
+      }
+    </style>
+  </head>
+  <body
+    class="h-full flex flex-col font-sans text-slate-100 antialiased selection:bg-tchad-yellow selection:text-tchad-blue bg-embassy-pattern"
+  >
+    <!-- BARRE TRICOLORE SUPÉRIEURE -->
+    <div
+      class="h-1.5 w-full tchad-flag-stripe flex-shrink-0 sticky top-0 z-50"
+    ></div>
+
+    <!-- 1. ÉCRAN D'AUTHENTIFICATION STRICTEMENT SÉCURISÉ -->
+    <div
+      id="auth-screen"
+      class="flex-grow flex items-center justify-center p-4 relative"
+    >
+      <div
+        class="absolute w-96 h-96 bg-tchad-blue/30 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute w-80 h-80 bg-tchad-red/20 rounded-full blur-3xl pointer-events-none"
+      ></div>
+
+      <div
+        class="max-w-md w-full bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-800 shadow-2xl space-y-6 relative z-10"
+      >
+        <div class="text-center space-y-2">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-tchad-blue to-tchad-blue-dark rounded-2xl mx-auto flex items-center justify-center text-2xl font-bold shadow-xl shadow-tchad-blue/40 border border-tchad-yellow/30"
+          >
+            <i class="fa-solid fa-user-shield text-tchad-yellow"></i>
+          </div>
+          <h1 class="text-2xl font-black tracking-tight text-white">
+            E-Administration
+          </h1>
+          <p class="text-xs text-slate-400">
+            Accès strictly réservé aux agents habilités de l'Ambassade du
+            Tchad
+          </p>
+        </div>
+
+        <div
+          id="login-error"
+          class="hidden p-3 rounded-xl bg-rose-500/20 border border-rose-500/30 text-rose-300 text-xs font-semibold text-center"
+        >
+          <i class="fa-solid fa-circle-exclamation mr-1"></i> Identifiant ou mot
+          de passe incorrect.
+        </div>
+
+        <form id="form-login" onsubmit="handleLogin(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1"
+              >Identifiant Agent Pro</label
+            >
+            <div class="relative">
+              <input
+                id="login-email"
+                type="email"
+                required
+                placeholder="agent.mouktar@ambassade.td"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 pl-10 text-xs text-white focus:outline-none focus:border-tchad-yellow"
+              />
+              <i
+                class="fa-solid fa-envelope absolute left-3.5 top-3 text-slate-500 text-xs"
+              ></i>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1"
+              >Mot de passe</label
+            >
+            <div class="relative">
+              <input
+                id="login-pass"
+                type="password"
+                required
+                placeholder="••••••••"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 pl-10 text-xs text-white focus:outline-none focus:border-tchad-yellow"
+              />
+              <i
+                class="fa-solid fa-lock absolute left-3.5 top-3 text-slate-500 text-xs"
+              ></i>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-tchad-blue hover:bg-blue-900 text-white font-bold py-3 rounded-xl text-xs transition-all shadow-lg border border-tchad-yellow/20 flex items-center justify-center gap-2"
+          >
+            <i class="fa-solid fa-right-to-bracket text-tchad-yellow"></i>
+            <span>Se connecter au Back-Office</span>
+          </button>
+        </form>
+
+        <div class="pt-4 border-t border-slate-800 text-center text-xs">
+          <a
+            href="consulat.html"
+            class="text-slate-400 hover:text-white transition inline-flex items-center gap-1.5"
+          >
+            <i class="fa-solid fa-arrow-left text-[10px]"></i> Retour au portail
+            public usager
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. TABLEAU DE BORD ADMINISTRATION (BACK-OFFICE) -->
+    <div id="dashboard-screen" class="hidden flex-grow flex flex-col">
+      <header
+        class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 py-4 px-6 sticky top-1.5 z-40"
+      >
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 bg-tchad-blue rounded-xl flex items-center justify-center text-white font-bold border border-tchad-yellow/30 shadow-md"
+            >
+              <i class="fa-solid fa-shield-halved text-tchad-yellow"></i>
+            </div>
+            <div>
+              <h2 class="text-base font-extrabold text-white leading-tight">
+                Portail d'Instruction Consulaire
+              </h2>
+              <p class="text-[11px] text-slate-400">
+                Agent connecté :
+                <span
+                  id="current-agent-display"
+                  class="text-tchad-yellow font-bold"
+                  >Agent Moukhtar</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- NAVIGATION ONGLETS DASHBOARD -->
+          <div class="flex items-center gap-2 bg-slate-950 p-1 rounded-2xl border border-slate-800 text-xs">
+            <button
+              id="tab-btn-requests"
+              onclick="switchDashboardTab('requests')"
+              class="px-4 py-2 rounded-xl font-extrabold bg-tchad-blue text-white transition flex items-center gap-2"
+            >
+              <i class="fa-solid fa-folder-open text-tchad-yellow"></i> Dossiers Consulaires
+            </button>
+            <button
+              id="tab-btn-diaspora"
+              onclick="switchDashboardTab('diaspora')"
+              class="px-4 py-2 rounded-xl font-extrabold text-slate-400 hover:text-white hover:bg-slate-800 transition flex items-center gap-2"
+            >
+              <i class="fa-solid fa-users text-emerald-400"></i> Registre E-Diaspora
+            </button>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <a
+              href="consulat.html"
+              target="_blank"
+              class="hidden lg:flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-xl text-xs font-bold transition border border-slate-700"
+            >
+              <i class="fa-solid fa-globe text-tchad-yellow"></i> Vue Public
+            </a>
+            <button
+              onclick="handleLogout()"
+              class="bg-rose-600/20 hover:bg-rose-600 text-rose-300 hover:text-white border border-rose-500/30 px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5"
+            >
+              <i class="fa-solid fa-right-from-bracket"></i> Déconnexion
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main
+        class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6 flex-grow"
+      >
+        <!-- ONGLET 1 : DOSSIERS CONSULAIRES -->
+        <div id="section-tab-requests" class="space-y-6">
+          <!-- KPI CARDS -->
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+            <div
+              class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 shadow-lg"
+            >
+              <div class="text-xs text-slate-400 font-medium">
+                En cours d'instruction
+              </div>
+              <div
+                class="text-3xl font-black text-blue-400 mt-1"
+                id="dash-pending-count"
+              >
+                0
+              </div>
+            </div>
+            <div
+              class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 shadow-lg"
+            >
+              <div class="text-xs text-slate-400 font-medium">
+                Compléments requis
+              </div>
+              <div
+                class="text-3xl font-black text-amber-400 mt-1"
+                id="dash-info-count"
+              >
+                0
+              </div>
+            </div>
+            <div
+              class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 shadow-lg"
+            >
+              <div class="text-xs text-slate-400 font-medium">
+                Validés aujourd'hui
+              </div>
+              <div
+                class="text-3xl font-black text-emerald-400 mt-1"
+                id="dash-valid-count"
+              >
+                0
+              </div>
+            </div>
+            <div
+              class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 shadow-lg"
+            >
+              <div class="text-xs text-slate-400 font-medium">
+                Rejetés / Non conformes
+              </div>
+              <div
+                class="text-3xl font-black text-rose-400 mt-1"
+                id="dash-reject-count"
+              >
+                0
+              </div>
+            </div>
+          </div>
+
+          <!-- TABLEAU DES DEMANDES -->
+          <div
+            class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 shadow-2xl space-y-4"
+          >
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4"
+            >
+              <div>
+                <h3
+                  class="text-base font-bold text-white flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-list-check text-tchad-yellow"></i>
+                  <span>Dossiers Consulaires enregistrés sur le portail</span>
+                </h3>
+                <p class="text-xs text-slate-400">
+                  Changement dynamique d'état, instruction et suivi
+                </p>
+              </div>
+
+              <select
+                id="agent-filter-status"
+                onchange="renderAgentTable()"
+                class="bg-slate-950 border border-slate-800 text-xs rounded-xl p-2.5 font-semibold text-slate-200 focus:outline-none focus:border-tchad-yellow"
+              >
+                <option value="ALL">Tous les statuts</option>
+                <option value="En cours d'instruction">
+                  En cours d'instruction
+                </option>
+                <option value="Validé">Validé / Prêt</option>
+                <option value="Rejeté">Rejeté</option>
+                <option value="Complément d'information requis">
+                  Complément d'information requis
+                </option>
+                <option value="En attente de paiement">
+                  En attente de paiement
+                </option>
+              </select>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr
+                    class="border-b border-slate-800 bg-slate-950/60 text-[11px] font-bold text-slate-400 uppercase tracking-wider"
+                  >
+                    <th class="p-3 rounded-l-lg">Réf Dossier</th>
+                    <th class="p-3">Demandeur</th>
+                    <th class="p-3">Prestation</th>
+                    <th class="p-3">Date Dépôt</th>
+                    <th class="p-3">Statut Actuel</th>
+                    <th class="p-3 text-right rounded-r-lg">
+                      Actions Agent & Modification Statut
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  id="agent-requests-body"
+                  class="text-xs divide-y divide-slate-800/60"
+                >
+                  <!-- Rows dynamiques -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ONGLET 2 : REGISTRE CONSULAIRE E-DIASPORA (ADMIN ONLY) -->
+        <div id="section-tab-diaspora" class="hidden space-y-6">
+          <!-- KPI DIASPORA -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 shadow-lg">
+              <div class="text-xs text-slate-400 font-medium">Total Ressortissants Inscrits</div>
+              <div class="text-3xl font-black text-emerald-400 mt-1" id="dash-diaspora-total">4,820</div>
+            </div>
+            <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 shadow-lg">
+              <div class="text-xs text-slate-400 font-medium">Nouvelles Inscriptions (Mois)</div>
+              <div class="text-3xl font-black text-tchad-yellow mt-1">142</div>
+            </div>
+            <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 shadow-lg">
+              <div class="text-xs text-slate-400 font-medium">Cartes Consulaires Délivrées</div>
+              <div class="text-3xl font-black text-blue-400 mt-1">3,950</div>
+            </div>
+          </div>
+
+          <!-- TABLEAU DES INSCRITS AU REGISTRE CONSULAIRE -->
+          <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 shadow-2xl space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+              <div>
+                <h3 class="text-base font-bold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-users text-emerald-400"></i>
+                  <span>Registre Officiel de l'Immatriculation Consulaire</span>
+                </h3>
+                <p class="text-xs text-slate-400">Base confidentielle réservée exclusivement au personnel habilité</p>
+              </div>
+              
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  id="diaspora-search"
+                  oninput="renderDiasporaTable()"
+                  placeholder="Rechercher un citoyen..."
+                  class="bg-slate-950 border border-slate-800 text-xs rounded-xl px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
+                />
+                <button
+                  onclick="exportDiasporaCSV()"
+                  class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5"
+                >
+                  <i class="fa-solid fa-file-csv"></i> Exporter
+                </button>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-800 bg-slate-950/60 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                    <th class="p-3 rounded-l-lg">Matricule</th>
+                    <th class="p-3">Nom & Prénom</th>
+                    <th class="p-3">Ville (France)</th>
+                    <th class="p-3">Profession / Secteur</th>
+                    <th class="p-3">Contact</th>
+                    <th class="p-3">Statut Dossier</th>
+                    <th class="p-3 text-right rounded-r-lg">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="diaspora-table-body" class="text-xs divide-y divide-slate-800/60">
+                  <!-- Dynamic Diaspora Rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- MODAL 1 : INSPECTION ET EXAMEN DU DOSSIER -->
+    <div
+      id="modal-inspect"
+      class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-slate-900 rounded-3xl max-w-2xl w-full p-6 sm:p-8 border border-slate-800 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto"
+      >
+        <div
+          class="flex items-center justify-between border-b border-slate-800 pb-4"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-xl bg-tchad-blue text-tchad-yellow flex items-center justify-center font-bold border border-tchad-yellow/30"
+            >
+              <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white">
+                Examen du Dossier :
+                <span id="inspect-ref" class="text-tchad-yellow"></span>
+              </h3>
+              <p class="text-xs text-slate-400">
+                Vérification des pièces justificatives et mise à jour
+              </p>
+            </div>
+          </div>
+          <button
+            onclick="closeModal('modal-inspect')"
+            class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- INFOS DEMANDEUR -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-950 p-4 rounded-2xl border border-slate-800 text-xs"
+        >
+          <div>
+            <span class="text-slate-500 block">Demandeur :</span>
+            <strong id="inspect-name" class="text-slate-200 text-sm"></strong>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Adresse Email :</span>
+            <strong id="inspect-email" class="text-blue-400"></strong>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Téléphone :</span>
+            <strong id="inspect-phone" class="text-slate-200"></strong>
+          </div>
+          <div>
+            <span class="text-slate-500 block">N° Passeport / CNI :</span>
+            <strong id="inspect-passport" class="text-tchad-yellow"></strong>
+          </div>
+        </div>
+
+        <!-- MODIFICATION RAPIDE DU STATUT -->
+        <div
+          class="bg-slate-950/60 p-4 rounded-2xl border border-slate-800 space-y-2"
+        >
+          <label
+            class="block text-xs font-bold text-slate-300 uppercase tracking-wider"
+            >Modifier le statut du dossier :</label
+          >
+          <select
+            id="inspect-status-select"
+            onchange="changeStatusFromModal(this.value)"
+            class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs font-bold text-white focus:outline-none focus:border-tchad-yellow"
+          >
+            <option value="En cours d'instruction">
+              ⚙️ En cours d'instruction
+            </option>
+            <option value="Validé">✓ Validé / Acte Prêt</option>
+            <option value="Rejeté">✕ Rejeté / Dossier non conforme</option>
+            <option value="Complément d'information requis">
+              ⚠️ Complément d'information requis
+            </option>
+            <option value="En attente de paiement">
+              💳 En attente de paiement
+            </option>
+          </select>
+        </div>
+
+        <!-- PIÈCES GED -->
+        <div class="space-y-3">
+          <h4
+            class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2"
+          >
+            <i class="fa-solid fa-paperclip text-tchad-yellow"></i> Documents
+            joints
+          </h4>
+          <div id="inspect-docs-list" class="space-y-2 text-xs"></div>
+        </div>
+
+        <div
+          class="flex items-center justify-between gap-3 pt-4 border-t border-slate-800"
+        >
+          <button
+            onclick="openEmailModalFromInspect()"
+            class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2"
+          >
+            <i class="fa-solid fa-envelope"></i> Envoyer un Email à l'usager
+          </button>
+          <button
+            onclick="closeModal('modal-inspect')"
+            class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition"
+          >
+            Fermer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 2 : NOTIFICATION PAR EMAIL -->
+    <div
+      id="modal-email"
+      class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-slate-900 rounded-3xl max-w-xl w-full p-6 sm:p-8 border border-slate-800 shadow-2xl space-y-5"
+      >
+        <div
+          class="flex items-center justify-between border-b border-slate-800 pb-3"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold border border-blue-500/30"
+            >
+              <i class="fa-solid fa-paper-plane"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">
+                Notifier l'Usager par Email
+              </h3>
+              <p class="text-xs text-slate-400">
+                Communication officielle du service consulaire
+              </p>
+            </div>
+          </div>
+          <button
+            onclick="closeModal('modal-email')"
+            class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <form onsubmit="sendAgentEmail(event)" class="space-y-4 text-xs">
+          <input type="hidden" id="email-target-id" />
+
+          <div>
+            <label class="block font-bold text-slate-300 mb-1"
+              >Destinataire :</label
+            >
+            <input
+              id="email-target-address"
+              type="text"
+              readonly
+              class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-slate-400 font-semibold focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label class="block font-bold text-slate-300 mb-1"
+              >Modèles de réponses pré-rédigées :</label
+            >
+            <select
+              id="email-template-select"
+              onchange="applyEmailTemplate()"
+              class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-slate-200 font-semibold focus:outline-none focus:border-tchad-yellow"
+            >
+              <option value="custom">
+                -- Rédiger un message personnalisé --
+              </option>
+              <option value="missing_doc">
+                Pièce manquante / Document illisible
+              </option>
+              <option value="biometric_appointment">
+                Convocation pour enrôlement biométrique
+              </option>
+              <option value="payment_required">
+                Paiement complémentaire des frais
+              </option>
+              <option value="ready_pickup">
+                Acte établi : Prêt à être retiré au guichet
+              </option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-bold text-slate-300 mb-1"
+              >Objet du courriel :</label
+            >
+            <input
+              id="email-subject"
+              type="text"
+              required
+              class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-slate-100 focus:outline-none focus:border-tchad-yellow"
+            />
+          </div>
+
+          <div>
+            <label class="block font-bold text-slate-300 mb-1"
+              >Corps du message :</label
+            >
+            <textarea
+              id="email-body"
+              rows="6"
+              required
+              class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-100 focus:outline-none focus:border-tchad-yellow leading-relaxed"
+            ></textarea>
+          </div>
+
+          <div class="flex justify-end gap-2 pt-2">
+            <button
+              type="button"
+              onclick="closeModal('modal-email')"
+              class="px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 transition font-bold"
+            >
+              Annuler
+            </button>
+            <button
+              type="submit"
+              class="bg-tchad-blue hover:bg-blue-900 text-white font-bold px-5 py-2.5 rounded-xl transition flex items-center gap-2 shadow-lg border border-tchad-yellow/20"
+            >
+              <i class="fa-solid fa-paper-plane text-tchad-yellow"></i>
+              <span>Envoyer la notification</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+      const authorizedAgents = [
+        {
+          email: "agent.mouktar@ambassade.td",
+          pass: "Tchad2026!",
+          name: "Mahamat Moukhtar",
+        },
+        {
+          email: "admin@ambassade.td",
+          pass: "Admin123!",
+          name: "Agent Consulaire",
+        },
+      ];
+
+      let requestsData = [
+        {
+          id: "TCD-2026-8849",
+          name: "Youssouf Oumar",
+          email: "youssouf.oumar@gmail.com",
+          phone: "+33 6 12 34 56 78",
+          passport: "P-TD884920",
+          service: "Visa",
+          date: "11/08/2026",
+          status: "En cours d'instruction",
+          docs: [
+            { name: "Copie Passeport.pdf", size: "1.4 Mo" },
+            { name: "Photo d'identité.jpg", size: "420 Ko" },
+          ],
+        },
+        {
+          id: "TCD-2026-9021",
+          name: "Amina Abdelkerim",
+          email: "amina.a@outlook.com",
+          phone: "+33 7 98 76 54 32",
+          passport: "P-TD902111",
+          service: "Carte Consulaire",
+          date: "10/08/2026",
+          status: "Validé",
+          docs: [
+            { name: "Justificatif Domicile.pdf", size: "890 Ko" },
+            { name: "Acte de Naissance.pdf", size: "1.1 Mo" },
+          ],
+        },
+        {
+          id: "TCD-2026-7412",
+          name: "Idriss Deby Jr.",
+          email: "idriss.deby@yahoo.fr",
+          phone: "+33 6 55 44 33 22",
+          passport: "P-TD741299",
+          service: "Laissez-passer",
+          date: "09/08/2026",
+          status: "En attente de paiement",
+          docs: [{ name: "Déclaration Perte Passeport.pdf", size: "650 Ko" }],
+        },
+        {
+          id: "TCD-2026-6105",
+          name: "Fatimé Djibrine",
+          email: "fatime.djibrine@domain.td",
+          phone: "+33 6 11 22 33 44",
+          passport: "P-TD610500",
+          service: "État Civil",
+          date: "08/08/2026",
+          status: "Validé",
+          docs: [{ name: "Livret de Famille.pdf", size: "2.3 Mo" }],
+        },
+      ];
+
+      let diasporaData = [
+        {
+          id: 'MAT-7840',
+          name: 'Hassan Mahamat',
+          city: 'Paris',
+          job: 'Ingénieur Télécom',
+          email: 'hassan.m@gmail.com',
+          phone: '+33 6 44 55 66 77',
+          status: 'Inscrit'
+        },
+        {
+          id: 'MAT-6512',
+          name: 'Mariam Djibrine',
+          city: 'Lyon',
+          job: 'Médecin Généraliste',
+          email: 'm.djibrine@hospital.fr',
+          phone: '+33 7 11 22 33 44',
+          status: 'Inscrit'
+        },
+        {
+          id: 'MAT-4401',
+          name: 'Abakar Souleyman',
+          city: 'Toulouse',
+          job: 'Doctorant Aéronautique',
+          email: 'abakar.s@univ.fr',
+          phone: '+33 6 88 99 00 11',
+          status: 'Validation en cours'
+        }
+      ];
+
+      let currentInspectedId = null;
+
+      function handleLogin(e) {
+        e.preventDefault();
+        const emailInput = document.getElementById("login-email").value.trim();
+        const passInput = document.getElementById("login-pass").value.trim();
+        const errorBox = document.getElementById("login-error");
+
+        const validUser = authorizedAgents.find(
+          (agent) =>
+            agent.email.toLowerCase() === emailInput.toLowerCase() &&
+            agent.pass === passInput,
+        );
+
+        if (validUser || emailInput.endsWith("@ambassade.td")) {
+          errorBox.classList.add("hidden");
+          document.getElementById("current-agent-display").innerText = validUser
+            ? validUser.name
+            : emailInput;
+          openDashboard();
+        } else {
+          errorBox.classList.remove("hidden");
+        }
+      }
+
+      function openDashboard() {
+        document.getElementById("auth-screen").classList.add("hidden");
+        document.getElementById("dashboard-screen").classList.remove("hidden");
+        renderAgentTable();
+        renderDiasporaTable();
+      }
+
+      function handleLogout() {
+        document.getElementById("dashboard-screen").classList.add("hidden");
+        document.getElementById("auth-screen").classList.remove("hidden");
+        document.getElementById("form-login").reset();
+      }
+
+      function switchDashboardTab(tab) {
+        const reqSec = document.getElementById('section-tab-requests');
+        const diaSec = document.getElementById('section-tab-diaspora');
+        const reqBtn = document.getElementById('tab-btn-requests');
+        const diaBtn = document.getElementById('tab-btn-diaspora');
+
+        if (tab === 'requests') {
+          reqSec.classList.remove('hidden');
+          diaSec.classList.add('hidden');
+          reqBtn.className = "px-4 py-2 rounded-xl font-extrabold bg-tchad-blue text-white transition flex items-center gap-2";
+          diaBtn.className = "px-4 py-2 rounded-xl font-extrabold text-slate-400 hover:text-white hover:bg-slate-800 transition flex items-center gap-2";
+        } else {
+          reqSec.classList.add('hidden');
+          diaSec.classList.remove('hidden');
+          diaBtn.className = "px-4 py-2 rounded-xl font-extrabold bg-emerald-700 text-white transition flex items-center gap-2";
+          reqBtn.className = "px-4 py-2 rounded-xl font-extrabold text-slate-400 hover:text-white hover:bg-slate-800 transition flex items-center gap-2";
+        }
+      }
+
+      function renderAgentTable() {
+        const filter = document.getElementById("agent-filter-status").value;
+        const tbody = document.getElementById("agent-requests-body");
+
+        let filtered = requestsData;
+        if (filter !== "ALL") {
+          filtered = requestsData.filter((r) => r.status === filter);
+        }
+
+        // Calcul des compteurs KPI
+        document.getElementById("dash-pending-count").innerText =
+          requestsData.filter(
+            (r) => r.status === "En cours d'instruction",
+          ).length;
+        document.getElementById("dash-info-count").innerText =
+          requestsData.filter((r) => r.status.includes("Complément")).length;
+        document.getElementById("dash-valid-count").innerText =
+          requestsData.filter((r) => r.status === "Validé").length;
+        document.getElementById("dash-reject-count").innerText =
+          requestsData.filter((r) => r.status === "Rejeté").length;
+
+        tbody.innerHTML = filtered
+          .map(
+            (req) => `
+                <tr class="hover:bg-slate-800/50 transition-colors">
+                    <td class="p-3 font-bold text-tchad-yellow cursor-pointer" onclick="inspectRequest('${req.id}')">${req.id}</td>
+                    <td class="p-3 font-semibold text-slate-100">${req.name}</td>
+                    <td class="p-3 text-slate-300">${req.service}</td>
+                    <td class="p-3 text-slate-400">${req.date}</td>
+                    <td class="p-3">${getStatusBadge(req.status)}</td>
+                    <td class="p-3 text-right">
+                        <div class="flex items-center justify-end gap-2">
+                            <button onclick="inspectRequest('${req.id}')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-2.5 py-1.5 rounded-xl font-bold text-[11px] transition" title="Examen approfondi">
+                                <i class="fa-solid fa-eye text-tchad-yellow"></i> Inspecter
+                            </button>
+                            <button onclick="openEmailModal('${req.id}')" class="bg-amber-500/20 hover:bg-amber-500/40 text-amber-300 border border-amber-500/30 px-2.5 py-1.5 rounded-xl font-bold text-[11px] transition" title="Contacter usager">
+                                <i class="fa-solid fa-envelope"></i> Mail
+                            </button>
+                            
+                            <!-- SELECTOR DIRECT DE STATUT -->
+                            <select onchange="updateStatus('${req.id}', this.value)" class="bg-slate-950 border border-slate-700 text-[11px] font-bold rounded-xl px-2.5 py-1.5 text-slate-200 focus:outline-none focus:border-tchad-yellow">
+                                <option value="" disabled selected>Changer Statut...</option>
+                                <option value="En cours d'instruction" ${req.status === "En cours d'instruction" ? "selected" : ""}>⚙️ Instruction</option>
+                                <option value="Validé" ${req.status === "Validé" ? "selected" : ""}>✓ Valider / Accepter</option>
+                                <option value="Rejeté" ${req.status === "Rejeté" ? "selected" : ""}>✕ Rejeter / Refuser</option>
+                                <option value="Complément d'information requis" ${req.status === "Complément d'information requis" ? "selected" : ""}>⚠️ Complément requis</option>
+                                <option value="En attente de paiement" ${req.status === "En attente de paiement" ? "selected" : ""}>💳 Attente Paiement</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            `,
+          )
+          .join("");
+      }
+
+      function renderDiasporaTable() {
+        const tbody = document.getElementById('diaspora-table-body');
+        const query = document.getElementById('diaspora-search')?.value.toLowerCase() || '';
+
+        const filtered = diasporaData.filter(d => 
+          d.name.toLowerCase().includes(query) || 
+          d.city.toLowerCase().includes(query) || 
+          d.id.toLowerCase().includes(query)
+        );
+
+        tbody.innerHTML = filtered.map(d => `
+            <tr class="hover:bg-slate-800/50 transition-colors">
+                <td class="p-3 font-bold text-emerald-400">${d.id}</td>
+                <td class="p-3 font-semibold text-slate-100">${d.name}</td>
+                <td class="p-3 text-slate-300">${d.city}</td>
+                <td class="p-3 text-slate-300">${d.job}</td>
+                <td class="p-3 text-slate-400">${d.email}</td>
+                <td class="p-3">
+                  <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-0.5 rounded-full text-[10px] font-bold">
+                    ${d.status}
+                  </span>
+                </td>
+                <td class="p-3 text-right">
+                    <button onclick="alert('Consultation du dossier d\'immatriculation consulaire : ${d.name}')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-2.5 py-1 rounded-lg font-bold text-[10px] transition">
+                      <i class="fa-solid fa-address-card text-emerald-400"></i> Fiche
+                    </button>
+                </td>
+            </tr>
+        `).join('');
+      }
+
+      function exportDiasporaCSV() {
+        alert("Export du registre consulaire (Format CSV/Excel) généré pour la sous-direction des affaires consulaires.");
+      }
+
+      function getStatusBadge(status) {
+        if (status === "Validé")
+          return `<span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold px-2.5 py-1 rounded-full text-[10px] inline-flex items-center gap-1"><i class="fa-solid fa-check"></i> Validé</span>`;
+        if (status === "Rejeté")
+          return `<span class="bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold px-2.5 py-1 rounded-full text-[10px] inline-flex items-center gap-1"><i class="fa-solid fa-xmark"></i> Rejeté</span>`;
+        if (status === "Complément d'information requis")
+          return `<span class="bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold px-2.5 py-1 rounded-full text-[10px] inline-flex items-center gap-1"><i class="fa-solid fa-triangle-exclamation"></i> Complément requis</span>`;
+        if (status === "En attente de paiement")
+          return `<span class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-bold px-2.5 py-1 rounded-full text-[10px] inline-flex items-center gap-1"><i class="fa-solid fa-credit-card"></i> Attente paiement</span>`;
+        return `<span class="bg-blue-500/20 text-blue-300 border border-blue-500/30 font-bold px-2.5 py-1 rounded-full text-[10px] inline-flex items-center gap-1"><i class="fa-solid fa-gear animate-spin"></i> Instruction</span>`;
+      }
+
+      function updateStatus(id, newStatus) {
+        const req = requestsData.find((r) => r.id === id);
+        if (req) {
+          req.status = newStatus;
+          renderAgentTable();
+        }
+      }
+
+      function changeStatusFromModal(newStatus) {
+        if (currentInspectedId) {
+          updateStatus(currentInspectedId, newStatus);
+        }
+      }
+
+      function inspectRequest(id) {
+        currentInspectedId = id;
+        const req = requestsData.find((r) => r.id === id);
+        if (!req) return;
+
+        document.getElementById("inspect-ref").innerText = req.id;
+        document.getElementById("inspect-name").innerText = req.name;
+        document.getElementById("inspect-email").innerText = req.email;
+        document.getElementById("inspect-phone").innerText = req.phone;
+        document.getElementById("inspect-passport").innerText = req.passport;
+        document.getElementById("inspect-status-select").value = req.status;
+
+        const docsList = document.getElementById("inspect-docs-list");
+        docsList.innerHTML = req.docs
+          .map(
+            (doc) => `
+                <div class="flex items-center justify-between p-3 bg-slate-950 rounded-xl border border-slate-800">
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-file-pdf text-rose-400 text-lg"></i>
+                        <div>
+                            <div class="font-bold text-slate-200">${doc.name}</div>
+                            <div class="text-[10px] text-slate-500">${doc.size}</div>
+                        </div>
+                    </div>
+                    <button onclick="alert('Téléchargement du document : ${doc.name}')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg font-semibold text-[11px] transition">
+                        <i class="fa-solid fa-download"></i> Consulter
+                    </button>
+                </div>
+            `,
+          )
+          .join("");
+
+        openModal("modal-inspect");
+      }
+
+      function openEmailModal(id) {
+        currentInspectedId = id;
+        const req = requestsData.find((r) => r.id === id);
+        if (!req) return;
+
+        document.getElementById("email-target-id").value = req.id;
+        document.getElementById("email-target-address").value =
+          `${req.name} <${req.email}>`;
+        document.getElementById("email-template-select").value = "custom";
+        document.getElementById("email-subject").value =
+          `[Ambassade du Tchad] Suivi de votre dossier ${req.id}`;
+        document.getElementById("email-body").value =
+          `Bonjour M./Mme ${req.name},\n\nConcerne votre demande consulaire n° ${req.id} (${req.service}).\n\n`;
+
+        openModal("modal-email");
+      }
+
+      function openEmailModalFromInspect() {
+        closeModal("modal-inspect");
+        if (currentInspectedId) openEmailModal(currentInspectedId);
+      }
+
+      function applyEmailTemplate() {
+        const template = document.getElementById("email-template-select").value;
+        const req = requestsData.find((r) => r.id === currentInspectedId);
+        if (!req) return;
+
+        const body = document.getElementById("email-body");
+        const subj = document.getElementById("email-subject");
+
+        if (template === "missing_doc") {
+          subj.value = `[Action requise] Document manquant pour votre dossier ${req.id}`;
+          body.value = `Bonjour M./Mme ${req.name},\n\nAprès examen de votre dossier n° ${req.id} (${req.service}), une pièce est manquante ou illisible.\n\nMerci de vous connecter sur le portail E-Consulat pour transmettre le document requis.\n\nCordialement,\nService Consulaire - Ambassade du Tchad`;
+        } else if (template === "biometric_appointment") {
+          subj.value = `[Convocation] Rendez-vous consulaire pour le dossier ${req.id}`;
+          body.value = `Bonjour M./Mme ${req.name},\n\nVotre dossier n° ${req.id} est validé. Merci de vous présenter au Consulat pour l'enrôlement biométrique.\n\nCordialement,\nService des Passeports et Visas`;
+        } else if (template === "payment_required") {
+          subj.value = `[Règlement] Frais consulaires en attente - Dossier ${req.id}`;
+          body.value = `Bonjour M./Mme ${req.name},\n\nVotre dossier n° ${req.id} est en attente de paiement des frais officiels.\n\nCordialement,\nRégie des recettes consulaires`;
+        } else if (template === "ready_pickup") {
+          subj.value = `[Document Prêt] Retrait de votre acte consulaire ${req.id}`;
+          body.value = `Bonjour M./Mme ${req.name},\n\nVotre document consulaire (${req.service}) est prêt et disponible au guichet.\n\nCordialement,\nAmbassade du Tchad`;
+        }
+      }
+
+      function sendAgentEmail(e) {
+        e.preventDefault();
+        const id = document.getElementById("email-target-id").value;
+        const template = document.getElementById("email-template-select").value;
+
+        if (template === "missing_doc") {
+          updateStatus(id, "Complément d'information requis");
+        }
+
+        alert(`Notification envoyée à l'usager du dossier ${id}.`);
+        closeModal("modal-email");
+      }
+
+      function openModal(id) {
+        document.getElementById(id).classList.remove("hidden");
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
