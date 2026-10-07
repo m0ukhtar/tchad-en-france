@@ -121,62 +121,64 @@
   <!-- ========================================== -->
   <div class="h-1.5 w-full flag-bar fixed top-0 left-0 z-[60]"></div>
 
-  <!-- ========================================== -->
-  <!-- BARRE D'INFORMATIONS ET URGENCE (TOPBAR)   -->
-  <!-- ========================================== -->
-  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 pt-3 relative z-50">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-      <div class="flex items-center gap-6 flex-wrap justify-center md:justify-start">
-        <span class="flex items-center gap-1.5 text-tchad-yellow font-medium">
-          <i class="fa-solid fa-building-columns"></i>
-          République du Tchad — Unité • Travail • Progrès
+  <!-- BARRE D'INFORMATIONS SUPÉRIEURE (TOP BAR) -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 border-b border-slate-800 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2 font-semibold text-tchad-yellow">
+          <i class="fa-solid fa-landmark"></i> République du Tchad — Unité • Travail • Progrès
         </span>
-        <span class="hidden lg:inline-block text-slate-600">|</span>
-        <span class="hidden lg:flex items-center gap-1.5 text-slate-300">
-          <i class="fa-solid fa-clock text-tchad-yellow"></i>
-          Consulat : Lun - Jeu 10h-13h & 14h-17h | Ven 10h-13h
+        <span class="text-slate-600">|</span>
+        <span class="flex items-center gap-2">
+          <i class="fa-regular fa-clock text-slate-400"></i> Consulat : Lun – Jeu 10h–13h & 14h–17h | Ven 10h–13h
         </span>
       </div>
-
-      <div class="flex items-center gap-4 text-slate-300">
-        <a href="tel:0145533675" class="hover:text-white transition flex items-center gap-1.5">
-          <i class="fa-solid fa-phone text-tchad-yellow"></i>
-          <span>01 45 53 36 75</span>
+      <div class="flex items-center gap-5">
+        <a href="tel:0145533675" class="flex items-center gap-1.5 hover:text-white transition font-medium">
+          <i class="fa-solid fa-phone text-tchad-yellow"></i> 01 45 53 36 75
         </a>
         <span class="text-slate-600">|</span>
-        <div class="flex items-center gap-3">
-          <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-tchad-blue hover:text-white transition flex items-center justify-center" aria-label="Facebook"><i class="fab fa-facebook-f text-[11px]"></i></a>
-          <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-black hover:text-white transition flex items-center justify-center" aria-label="Twitter X"><i class="fab fa-x-twitter text-[11px]"></i></a>
+        <div class="flex items-center gap-2">
+          <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-tchad-blue flex items-center justify-center text-white transition">
+            <i class="fa-brands fa-facebook-f text-[10px]"></i>
+          </a>
+          <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-tchad-blue flex items-center justify-center text-white transition">
+            <i class="fa-brands fa-x-twitter text-[10px]"></i>
+          </a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ========================================== -->
-  <!-- NOUVEAU HEADER / NAVIGATION MODERNE       -->
-  <!-- ========================================== -->
-  <header class="sticky top-[0px] z-40 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 transition-all duration-300">
+  <!-- HEADER NAVIGATION (PROPRE ET ALIGNÉ) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex items-center justify-between h-20 gap-4">
         
-        <!-- LOGO INSTITUTIONNEL ET TITRE -->
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center p-1 bg-slate-50 rounded-xl border border-slate-200 group-hover:border-tchad-blue transition">
-            <img src="armoiries-tchad.svg" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Coat_of_arms_of_Chad.svg/300px-Coat_of_arms_of_Chad.svg.png';" alt="Armoiries du Tchad" class="max-h-full max-w-full object-contain">
+        <!-- BRAND LOGO (TEXTES HARMONISÉS SANS CHEVAUCHEMENT) -->
+        <a href="index.html" class="flex items-center gap-3 shrink-0 group py-2">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center p-1 bg-slate-50 rounded-xl border border-slate-200 group-hover:border-tchad-blue transition">
+            <img src="uploads/armoiries-tchad.svg" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Coat_of_arms_of_Chad.svg/300px-Coat_of_arms_of_Chad.svg.png';" alt="Armoiries du Tchad" class="max-h-full max-w-full object-contain">
           </div>
-          <div class="flex flex-col">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-tchad-red">République du Tchad</span>
-            <span class="text-lg sm:text-xl font-extrabold text-tchad-blue tracking-tight leading-tight group-hover:text-blue-900 transition">
+          <div class="flex flex-col justify-center">
+            <span class="text-[10px] font-extrabold uppercase tracking-widest text-tchad-red leading-tight">République du Tchad</span>
+            <h1 class="text-base sm:text-lg font-black text-tchad-blue tracking-tight leading-tight group-hover:text-blue-900 transition whitespace-nowrap">
               Ambassade en France
-            </span>
-            <span class="text-[10px] font-medium text-slate-500 hidden sm:inline-block">Délégation permanente auprès de l'UNESCO & OIF</span>
+            </h1>
+            <span class="text-[9px] font-semibold text-slate-500 hidden sm:inline-block leading-tight mt-0.5">Délégation permanente auprès de l'UNESCO & OIF</span>
           </div>
         </a>
 
         <!-- MENU PRINCIPAL DESKTOP -->
         <nav class="hidden xl:flex items-center space-x-1 text-xs font-bold uppercase tracking-wider text-slate-700">
-          <a href="#ambassade" class="px-3 py-2 rounded-lg bg-tchad-blue/10 text-tchad-blue font-extrabold hover:bg-slate-100 hover:text-tchad-blue transition">L'Ambassade</a>
-          <a href="#demarches" class="px-3 py-2 rounded-lg hover:bg-tchad-blue hover:text-white transition">Consulat & Visas</a>
+          <a href="#ambassade" class="px-3 py-2 rounded-lg bg-tchad-blue/10 text-tchad-blue font-extrabold hover:bg-slate-100 transition">L'Ambassade</a>
+          <a href="#demarches" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Services Consulaires</a>
+          
+          <!-- BOUTON VALORISÉ E-CONSULAT -->
+          <a href="consulat.html" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">
+            <span>E-Consulat & Démarches</span>
+          </a>
+
           <a href="#actualites" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Actualités</a>
           <a href="#tchad" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Le Tchad</a>
           <a href="#economie" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Économie & Tourisme</a>
@@ -184,42 +186,17 @@
           <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-tchad-blue transition">Contact</a>
         </nav>
 
-        <!-- BOUTONS D'ACTION RAPIDE & MENU MOBILE -->
-        <!-- <div class="flex items-center gap-3">
-          <button onclick="openAppointmentModal()" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-tchad-blue to-tchad-blue-dark text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl hover:shadow-lg hover:shadow-tchad-blue/30 hover:scale-[1.02] transition active:scale-95">
-            <i class="fa-regular fa-calendar-check text-tchad-yellow"></i>
-            <span>Prendre RDV</span>
-          </button>-->
-
+        <!-- BOUTON RECHERCHE & MOBILE -->
+        <div class="flex items-center gap-2 shrink-0">
           <button onclick="openSearchModal()" class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 hover:bg-tchad-blue hover:text-white transition flex items-center justify-center" aria-label="Rechercher">
             <i class="fa-solid fa-magnifying-glass text-sm"></i>
           </button>
 
-          <!-- Bouton Hamburguer Mobile -->
           <button onclick="toggleMobileMenu()" class="xl:hidden w-10 h-10 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 transition flex items-center justify-center" aria-label="Menu Mobile">
             <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
           </button>
         </div>
 
-      </div>
-    </div>
-
-    <!-- TIROIR MENU MOBILE -->
-    <div id="mobileMenu" class="hidden xl:hidden bg-white border-b border-slate-200 shadow-2xl transition-all">
-      <div class="px-4 pt-3 pb-6 space-y-2 text-sm font-bold uppercase">
-        <a href="#ambassade" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">L'Ambassade</a>
-        <a href="#demarches" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg bg-tchad-blue/10 text-tchad-blue font-extrabold">Consulat & Démarches</a>
-        <a href="#actualites" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Actualités & Direct</a>
-        <a href="#tchad" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Le Tchad & Culture</a>
-        <a href="#economie" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Économie & Investissement</a>
-        <a href="#equipe" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">L'Équipe diplomatique</a>
-        <a href="#contact" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-tchad-blue">Contact & Horaires</a>
-        <div class="pt-2 border-t border-slate-100">
-          <button onclick="openAppointmentModal(); toggleMobileMenu()" class="w-full bg-tchad-blue text-white py-3 rounded-xl font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-            <i class="fa-regular fa-calendar-check text-tchad-yellow"></i>
-            Prendre Rendez-vous Consulaire
-          </button>
-        </div>
       </div>
     </div>
   </header>
@@ -315,7 +292,7 @@
               
               <div class="relative h-[420px] sm:h-[480px] w-full overflow-hidden group">
                 <!-- PHOTO AMBASSADRICE -->
-                <img src="ambassadrice.JPG" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800';" alt="Amina Priscille Longoh - Ambassadrice du Tchad" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition duration-700">
+                <img src="ambassadrice.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800';" alt="Amina Priscille Longoh - Ambassadrice du Tchad" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition duration-700">
                 
                 <!-- OVERLAY DÉGRADÉ INFÉRIEUR POUR LISIBILITÉ -->
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
@@ -631,7 +608,7 @@
          
         <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 group">
           <div class="relative aspect-video bg-slate-900 overflow-hidden">
-            <img src="idi_pnd.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?w=600';" alt="BIE Paris" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+            <img src="https://www.onama.td/wp-content/WhatsApp-Image-2025-11-10-at-11.26.50.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?w=600';" alt="BIE Paris" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
             <button onclick="playVideoModal('https://youtu.be/KHPIw5Zm2TU?si=A2Ohvl5J7FMrdj00', '173e session BIE Paris')" class="absolute inset-0 m-auto w-12 h-12 bg-tchad-red text-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
               <i class="fas fa-play ml-1 text-sm"></i>
             </button>
@@ -1466,6 +1443,16 @@
       const container = document.getElementById('serviceModalContent');
       const data = serviceData[type];
 
+      // Mapping des clés de service vers les noms attendus par consulat.html
+      const serviceMapping = {
+        visa: 'Visa',
+        carte: 'Carte Consulaire',
+        etatcivil: 'État Civil',
+        passeport: 'Laissez-passer'
+      };
+
+      const targetService = serviceMapping[type] || 'Visa';
+
       if (data) {
         container.innerHTML = `
           <div class="flex items-center gap-3 mb-2">
@@ -1476,9 +1463,10 @@
           </div>
           ${data.content}
           <div class="pt-4 flex justify-end">
-            <button onclick="closeServiceModal(); openAppointmentModal();" class="bg-tchad-blue text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-900">
-              Prendre RDV pour ce service
-            </button>
+            <a href="consulat.html?service=${encodeURIComponent(targetService)}" class="bg-tchad-blue text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-900 transition-colors inline-flex items-center gap-2">
+              <span>Accéder aux démarches en ligne</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
           </div>
         `;
         modal.classList.remove('hidden');
