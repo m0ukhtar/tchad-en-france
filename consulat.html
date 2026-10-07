@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Consulat Tchad | Guichet Numérique Unique</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- QRCode JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        tchad: {
+                            blue: '#002654',
+                            'blue-dark': '#001938',
+                            yellow: '#FFCD00',
+                            red: '#C8102E',
+                            'red-dark': '#A00B22',
+                        }
+                    }
+                }
+            }
+        }
+
+        function submitDiasporaRegistration(e) {
+            e.preventDefault();
+            closeModal('modal-diaspora-register');
+            alert("Votre demande d'immatriculation au registre consulaire a été transmise avec succès au service de l'Ambassade. Un accusé de réception vous a été envoyé par email.");
+            e.target.reset();
+        }
+    </script>
+    <style>
+        .tchad-flag-stripe {
+            background: linear-gradient(90deg, #002654 33.33%, #FFCD00 33.33%, #FFCD00 66.66%, #C8102E 66.66%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col font-sans text-slate-800 antialiased selection:bg-tchad-yellow selection:text-tchad-blue">
+
+    <!-- Top Flag Bar -->
+    <div class="h-1.5 w-full tchad-flag-stripe flex-shrink-0 sticky top-0 z-50"></div>
+
+    <!-- Header Navigation (PORTAIL PUBLIC / CITOYENS) -->
+    <header class="bg-white border-b border-slate-200 sticky top-1.5 z-40 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 gap-4">
+                
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3 shrink-0 group">
+                    <div class="w-10 h-10 bg-tchad-blue rounded-xl flex items-center justify-center text-white text-xl font-black shadow-md shadow-tchad-blue/20 border border-tchad-yellow/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-passport"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tchad-red bg-red-50 px-1.5 py-0.5 rounded border border-red-100 whitespace-nowrap">République du Tchad</span>
+                            <span class="text-[10px] text-slate-400 font-medium hidden sm:inline-block whitespace-nowrap">Ambassade en France</span>
+                        </div>
+                        <h1 class="text-base font-black text-tchad-blue tracking-tight leading-tight group-hover:text-blue-900 transition whitespace-nowrap">E-CONSULAT TCHAD</h1>
+                    </div>
+                </a>
+
+                <!-- Menu Public Uniquement (Desktop) -->
+                <nav class="hidden lg:flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+                    <button onclick="switchModule('citoyen')" id="nav-citoyen" class="nav-btn active flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-tchad-blue text-white shadow-xs whitespace-nowrap">
+                        <i class="fa-solid fa-layer-group"></i> Nos Services
+                    </button>
+                    <button onclick="switchModule('diaspora')" id="nav-diaspora" class="nav-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-tchad-blue hover:bg-white/60 transition-all whitespace-nowrap">
+                        <i class="fa-solid fa-earth-africa"></i> E-Diaspora
+                    </button>
+                    <a href="https://evisa.td" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-tchad-blue hover:bg-white/60 transition-all whitespace-nowrap">
+                        <i class="fa-solid fa-passport"></i> e-Visa Officiel
+                    </a>
+                    <button onclick="openModal('modal-tracking')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-tchad-blue hover:bg-white/60 transition-all whitespace-nowrap">
+                        <i class="fa-solid fa-magnifying-glass"></i> Suivre mon dossier
+                    </button>
+                </nav>
+
+                <!-- Actions Droite & Accès Agent Sécurisé -->
+                <div class="flex items-center gap-2 shrink-0">
+                    <a href="index.html" class="hidden xl:flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-xl text-xs font-bold transition-all border border-slate-200 whitespace-nowrap">
+                        <i class="fa-solid fa-house text-tchad-blue"></i>
+                        <span>Portail Vitrine</span>
+                    </a>
+                    
+                    <!-- Bouton Connexion Personnel -->
+                    <a href="admin.html" class="flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white px-3 py-1.5 rounded-xl text-xs font-bold transition-all shadow-xs whitespace-nowrap">
+                        <i class="fa-solid fa-lock text-tchad-yellow"></i>
+                        <span class="hidden sm:inline">Espace Agent</span>
+                    </a>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden w-9 h-9 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 transition flex items-center justify-center">
+                        <i class="fa-solid fa-bars text-sm" id="menuIcon"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Sub-Header Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 p-4 space-y-2 shadow-xl">
+            <div class="grid grid-cols-2 gap-2 text-xs font-bold">
+                <button onclick="switchModule('citoyen'); toggleMobileMenu()" class="p-2.5 rounded-xl bg-tchad-blue text-white flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group"></i> Nos Services
+                </button>
+                <button onclick="switchModule('diaspora'); toggleMobileMenu()" class="p-2.5 rounded-xl bg-slate-100 text-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-earth-africa"></i> E-Diaspora
+                </button>
+                <a href="https://evisa.td" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 text-slate-700 flex items-center gap-2 col-span-2">
+                    <i class="fa-solid fa-passport text-tchad-blue"></i> Portail e-Visa Officiel
+                </a>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex gap-2">
+                <button onclick="openModal('modal-tracking'); toggleMobileMenu()" class="w-full bg-tchad-blue/10 text-tchad-blue py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-magnifying-glass"></i> Suivre mon dossier
+                </button>
+                <a href="index.html" class="w-full bg-slate-100 text-slate-700 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-house"></i> Vitrine
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- ================================================================= -->
+        <!-- MODULE 1: E-CONSULAT / CITOYENS                                    -->
+        <!-- ================================================================= -->
+        <section id="module-citoyen" class="space-y-8">
+            
+            <!-- Hero Banner -->
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-tchad-blue via-tchad-blue-dark to-slate-900 text-white p-8 sm:p-10 shadow-xl border border-slate-800">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-[200px] pointer-events-none text-white">
+                    <i class="fa-solid fa-passport"></i>
+                </div>
+                <div class="relative z-10 max-w-2xl">
+                    <span class="inline-flex items-center gap-2 bg-tchad-yellow/20 text-tchad-yellow border border-tchad-yellow/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                        <i class="fa-solid fa-circle-check text-[10px]"></i> Plateforme Unique Accès 24h/24 & 7j/7
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+                        Vos démarches consulaires tchadiennes en quelques clics.
+                    </h2>
+                    <p class="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Effectuez vos demandes de visa, cartes consulaires, actes d'état civil, laissez-passer et rendez-vous sans déplacement préalable.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <button onclick="scrollToSection('services-list')" class="bg-tchad-yellow hover:bg-yellow-400 text-tchad-blue-dark px-5 py-3 rounded-xl font-bold text-sm shadow-lg shadow-tchad-yellow/20 transition-all flex items-center gap-2">
+                            <span>Nouvelle Demande</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="openModal('modal-tracking')" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-3 rounded-xl font-semibold text-sm transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <span>Suivre mon dossier</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Grid (E-CONSULAT) -->
+            <div id="services-list" class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-extrabold text-slate-900">Services Consulaires Disponibles</h3>
+                        <p class="text-xs text-slate-500">Sélectionnez la prestation dont vous avez besoin</p>
+                    </div>
+                    <span class="text-xs text-tchad-blue font-bold bg-tchad-blue/10 px-3 py-1 rounded-full">6 démarches actives</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    
+                    <!-- Visa (Redirection e-Visa Officiel) -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-tchad-blue shadow-xs hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 text-tchad-blue flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-passport"></i>
+                                </div>
+                                <span class="text-xs font-bold text-tchad-blue bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-100">Portal e-Visa</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900 group-hover:text-tchad-blue transition-colors">Visas d'Entrée (e-Visa)</h4>
+                            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Demande officielle de visa de tourisme, d'affaires ou transit sur la plateforme nationale e-Visa Tchad.</p>
+                        </div>
+                        <a href="https://evisa.td" target="_blank" rel="noopener noreferrer" class="mt-5 w-full bg-tchad-blue hover:bg-tchad-blue-dark text-white py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <span>Accéder à evisa.td</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Carte Consulaire -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-tchad-blue shadow-xs hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-id-card"></i>
+                                </div>
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-100">Frais : 30 €</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900 group-hover:text-tchad-blue transition-colors">Carte Consulaire</h4>
+                            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Immatriculation officielle des citoyens tchadiens résidant dans la juridiction.</p>
+                        </div>
+                        <button onclick="openForm('Carte Consulaire')" class="mt-5 w-full bg-slate-900 hover:bg-tchad-blue text-white py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            <span>Faire une demande</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- État Civil -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-tchad-blue shadow-xs hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-100">Frais : 20 €</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900 group-hover:text-tchad-blue transition-colors">Actes d'État Civil</h4>
+                            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Transcription d'actes de naissance, mariage, décès, et procurations notariales.</p>
+                        </div>
+                        <button onclick="openForm('État Civil')" class="mt-5 w-full bg-slate-900 hover:bg-tchad-blue text-white py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            <span>Faire une demande</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Laissez-passer -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-tchad-blue shadow-xs hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-rose-50 text-tchad-red flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-plane-departure"></i>
+                                </div>
+                                <span class="text-xs font-bold text-tchad-red bg-rose-50 px-2.5 py-1 rounded-lg border border-rose-100">Frais : 40 €</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900 group-hover:text-tchad-blue transition-colors">Laissez-Passer / Attestations</h4>
+                            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Titre de voyage d'urgence et attestations diverses de célibat, coutume ou résidence.</p>
+                        </div>
+                        <button onclick="openForm('Laissez-passer')" class="mt-5 w-full bg-slate-900 hover:bg-tchad-blue text-white py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            <span>Faire une demande</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Prise de Rendez-vous -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-tchad-blue shadow-xs hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                </div>
+                                <span class="text-xs font-bold text-purple-700 bg-purple-50 px-2.5 py-1 rounded-lg border border-purple-100">Gratuit</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900 group-hover:text-tchad-blue transition-colors">Prise de Rendez-vous</h4>
+                            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Planification de rendez-vous en présentiel à l'Ambassade pour enrôlement biométrique.</p>
+                        </div>
+                        <button onclick="openRdvModal()" class="mt-5 w-full bg-slate-900 hover:bg-tchad-blue text-white py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            <span>Réserver un créneau</span>
+                            <i class="fa-solid fa-calendar-days text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Paiement en Ligne Sécurisé -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-tchad-blue shadow-xs hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                </div>
+                                <span class="text-xs font-bold text-cyan-700 bg-cyan-50 px-2.5 py-1 rounded-lg border border-cyan-100">Sécurisé</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900 group-hover:text-tchad-blue transition-colors">Paiement & Reçus</h4>
+                            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Règlement en ligne des frais consulaires par carte bancaire avec reçu horodaté.</p>
+                        </div>
+                        <button onclick="openModal('modal-tracking')" class="mt-5 w-full bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            <span>Payer un dossier en attente</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Widget de suivi individuel pour l'usager 
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-tchad-blue/10 text-tchad-blue flex items-center justify-center text-xl font-bold shrink-0">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-extrabold text-slate-900">Vous avez déjà déposé une demande ?</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Saisissez votre code de référence pour connaître l'avancement de votre dossier en toute confidentialité.</p>
+                    </div>
+                </div>
+                <button onclick="openModal('modal-tracking')" class="w-full md:w-auto bg-tchad-blue hover:bg-tchad-blue-dark text-white font-bold px-6 py-3 rounded-xl text-xs transition-all shadow-xs whitespace-nowrap flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Suivre mon dossier</span>
+                </button>
+            </div>-->
+
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- MODULE 2: E-DIASPORA (Espace Public Usager)                       -->
+        <!-- ================================================================= -->
+        <section id="module-diaspora" class="hidden space-y-8">
+            <!-- Hero Banner E-Diaspora -->
+            <div class="bg-gradient-to-r from-emerald-900 via-teal-950 to-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden border border-emerald-800">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-[200px] pointer-events-none text-white">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="relative z-10 max-w-2xl">
+                    <span class="inline-flex items-center gap-2 bg-emerald-400/20 text-emerald-300 border border-emerald-400/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                        <i class="fa-solid fa-shield-halved"></i> Registre Consulaire Officiel
+                    </span>
+                    <h2 class="text-3xl font-extrabold tracking-tight">
+                        Inscription au Registre des Tchadiens de l'Étranger
+                    </h2>
+                    <p class="mt-3 text-emerald-100/80 text-sm leading-relaxed">
+                        Faites-vous recenser auprès de l'Ambassade du Tchad en France. L'inscription au registre facilite l'assistance consulaire en cas d'urgence et la délivrance de vos documents administratifs.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <button onclick="openModal('modal-diaspora-register')" class="bg-emerald-400 hover:bg-emerald-300 text-slate-900 font-bold px-6 py-3 rounded-xl text-xs transition-all shadow-md flex items-center gap-2">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>S'inscrire au Registre Consulaire</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Statistiques anonymisées (Sans données nominatives) -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4">
+                    <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie text-emerald-600"></i>
+                        <span>Cartographie des Secteurs</span>
+                    </h3>
+                    <p class="text-xs text-slate-500">Répartition globale et anonyme des compétences recensées.</p>
+                    
+                    <div class="space-y-3 text-xs pt-2">
+                        <div>
+                            <div class="flex justify-between font-semibold mb-1">
+                                <span>Ingénierie & Technologies</span>
+                                <span>38%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                <div class="bg-emerald-600 h-2 rounded-full" style="width: 38%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-semibold mb-1">
+                                <span>Santé & Médecine</span>
+                                <span>24%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 24%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-semibold mb-1">
+                                <span>Finance, Économie & Droit</span>
+                                <span>20%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-semibold mb-1">
+                                <span>Étudiants & Chercheurs</span>
+                                <span>18%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                <div class="bg-amber-500 h-2 rounded-full" style="width: 18%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Engagement de Confidentialité et Explication du Registre -->
+                <div class="lg:col-span-2 bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900">Pourquoi s'inscrire au registre ?</h3>
+                            <p class="text-xs text-slate-500">Les avantages de l'immatriculation consulaire pour les citoyens</p>
+                        </div>
+                        <span class="text-xs bg-emerald-50 text-emerald-700 font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-lock text-[10px]"></i> Données Protégées
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <i class="fa-solid fa-kit-medical text-lg text-emerald-600 mb-1"></i>
+                            <h4 class="font-bold text-slate-900">Protection & Urgence</h4>
+                            <p class="text-slate-500 leading-relaxed">Permet à l'Ambassade de vous contacter rapidement et de prévenir vos proches en cas de crise ou d'urgence familiale.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <i class="fa-solid fa-file-invoice text-lg text-tchad-blue mb-1"></i>
+                            <h4 class="font-bold text-slate-900">Démarches Simplifiées</h4>
+                            <p class="text-slate-500 leading-relaxed">Tarifs réduits et traitement prioritaire pour le renouvellement de vos passeports, cartes consulaires et actes d'état civil.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <i class="fa-solid fa-check-to-slot text-lg text-purple-600 mb-1"></i>
+                            <h4 class="font-bold text-slate-900">Droits Civiques</h4>
+                            <p class="text-slate-500 leading-relaxed">Facilite votre inscription sur les listes électorales consulaires pour participer aux scrutins nationaux depuis l'étranger.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <i class="fa-solid fa-shield-cat text-lg text-amber-600 mb-1"></i>
+                            <h4 class="font-bold text-slate-900">Confidentialité Stricte</h4>
+                            <p class="text-slate-500 leading-relaxed">Vos informations sont strictement confidentielles et réservées exclusivement à l'instruction interne de l'Ambassade.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-50/60 border border-emerald-200 p-4 rounded-2xl flex items-center justify-between gap-4">
+                        <div class="text-xs text-emerald-900">
+                            <strong>Prêt à effectuer votre immatriculation ?</strong>
+                            <p class="text-emerald-700 mt-0.5">La procédure prend moins de 5 minutes et se fait intégralement en ligne.</p>
+                        </div>
+                        <button onclick="openModal('modal-diaspora-register')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-all shrink-0">
+                            Commencer l'inscription
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal: Formulaire d'Inscription au Registre Consulaire -->
+    <div id="modal-diaspora-register" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900">Inscription au Registre Consulaire</h3>
+                        <p class="text-xs text-slate-500">Recensement officiel des citoyens tchadiens résidant en France</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-diaspora-register')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form onsubmit="submitDiasporaRegistration(event)" class="space-y-4 text-xs">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Nom *</label>
+                        <input type="text" required placeholder="Ex: Mahamat" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-emerald-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Prénom *</label>
+                        <input type="text" required placeholder="Ex: Hassan" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-emerald-600 focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Date de Naissance *</label>
+                        <input type="date" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-emerald-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Lieu de Naissance *</label>
+                        <input type="text" required placeholder="Ex: N'Djaména" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-emerald-600 focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Adresse Email *</label>
+                        <input type="email" required placeholder="hassan@example.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-emerald-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Téléphone en France *</label>
+                        <input type="tel" required placeholder="+33 6 12 34 56 78" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-emerald-600 focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Ville de résidence (France) *</label>
+                        <input type="text" required placeholder="Ex: Paris" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-emerald-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Secteur d'activité / Profession *</label>
+                        <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-emerald-600 focus:outline-none font-medium">
+                            <option>Ingénierie & Technologies</option>
+                            <option>Santé & Médecine</option>
+                            <option>Finance, Économie & Droit</option>
+                            <option>Étudiant / Chercheur</option>
+                            <option>Enseignement & Culture</option>
+                            <option>Autre secteur</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">Justificatif d'identité (Passeport Tchadien ou CNI)</label>
+                    <div class="border-2 border-dashed border-slate-200 rounded-2xl p-4 text-center bg-slate-50 hover:bg-slate-100 transition-colors cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-up text-xl text-emerald-600 mb-1"></i>
+                        <div class="font-semibold text-slate-700">Téléverser votre pièce d'identité</div>
+                        <p class="text-[10px] text-slate-400 mt-0.5">PDF, JPG, PNG (Max 5 Mo)</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-start gap-2 text-[11px] text-slate-600">
+                    <i class="fa-solid fa-lock text-emerald-600 mt-0.5"></i>
+                    <span>Les informations transmises sont strictement confidentielles et traitées sous la responsabilité du Consulat de l'Ambassade du Tchad.</span>
+                </div>
+
+                <div class="flex justify-end gap-2 pt-2">
+                    <button type="button" onclick="closeModal('modal-diaspora-register')" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition-all">Annuler</button>
+                    <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2 rounded-xl text-xs transition-all shadow-md flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                        <span>Soumettre mon immatriculation</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    </main>
+
+
+    <!-- ================================================================= -->
+    <!-- MODALS SECTION                                                    -->
+    <!-- ================================================================= -->
+
+    <!-- Modal: Formulaire Dynamique de demande (Carte, Etat Civil, etc.) -->
+    <div id="modal-form" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-tchad-blue/10 text-tchad-blue flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900" id="form-modal-title">Nouvelle Demande</h3>
+                        <p class="text-xs text-slate-500">Remplissez le formulaire de démarche en ligne</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-form')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="application-form" onsubmit="submitForm(event)" class="space-y-4">
+                <input type="hidden" id="form-service-type">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Nom complet *</label>
+                        <input id="applicant-name" type="text" required placeholder="Ex: Mahamat Hassan" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs focus:ring-2 focus:ring-tchad-blue focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Adresse Email *</label>
+                        <input id="applicant-email" type="email" required placeholder="m.hassan@example.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs focus:ring-2 focus:ring-tchad-blue focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Numéro de Téléphone *</label>
+                        <input id="applicant-phone" type="tel" required placeholder="+33 6 12 34 56 78" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs focus:ring-2 focus:ring-tchad-blue focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">N° Passeport / CNI *</label>
+                        <input id="applicant-passport" type="text" required placeholder="P-TD984021" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs focus:ring-2 focus:ring-tchad-blue focus:outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Pièces justificatives (Scan PDF/Image)</label>
+                    <div class="border-2 border-dashed border-slate-200 rounded-2xl p-4 text-center bg-slate-50 hover:bg-slate-100 transition-colors cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-up text-2xl text-tchad-blue mb-1"></i>
+                        <div class="text-xs font-semibold text-slate-700">Cliquez pour téléverser votre document</div>
+                        <p class="text-[10px] text-slate-400 mt-0.5">Formats acceptés : PDF, JPG, PNG (Max 5 Mo)</p>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 flex items-start gap-2 text-xs text-amber-800">
+                    <i class="fa-solid fa-shield-cat text-amber-600 mt-0.5"></i>
+                    <span>En validant ce formulaire, vos données seront transmises au service consulaire de l'Ambassade du Tchad pour vérification.</span>
+                </div>
+
+                <div class="flex justify-end gap-2 pt-2">
+                    <button type="button" onclick="closeModal('modal-form')" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition-all">Annuler</button>
+                    <button type="submit" class="bg-tchad-blue hover:bg-tchad-blue-dark text-white font-bold px-5 py-2 rounded-xl text-xs transition-all shadow-md flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                        <span>Valider & Obtenir le Code</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Suivi de Dossier -->
+    <div id="modal-tracking" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h3 class="text-base font-bold text-slate-900">Suivre un dossier consulaire</h3>
+                <button onclick="closeModal('modal-tracking')" class="text-slate-400 hover:text-slate-600">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-3">
+                <label class="block text-xs font-bold text-slate-700">Numéro de suivi (ex: TCD-2026-8849)</label>
+                <div class="flex gap-2">
+                    <input id="tracking-input-code" type="text" placeholder="Entrez votre code..." class="flex-grow bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs font-bold uppercase focus:ring-2 focus:ring-tchad-blue focus:outline-none">
+                    <button onclick="searchTrackingCode()" class="bg-tchad-blue hover:bg-tchad-blue-dark text-white font-bold px-4 py-2 rounded-xl text-xs transition-all">
+                        Rechercher
+                    </button>
+                </div>
+            </div>
+
+            <div id="tracking-result" class="hidden space-y-4 pt-2 border-t border-slate-100">
+                <!-- Dynamic tracking result -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: QR Code & Reçu Document -->
+    <div id="modal-receipt" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 space-y-5 text-center">
+            <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mx-auto">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+                <h3 class="text-lg font-extrabold text-slate-900">Demande Enregistrée !</h3>
+                <p class="text-xs text-slate-500 mt-1">Conservez soigneusement votre récapitulatif</p>
+            </div>
+
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left text-xs space-y-2">
+                <div class="flex justify-between"><span class="text-slate-500">Référence :</span> <strong id="receipt-ref" class="text-tchad-blue"></strong></div>
+                <div class="flex justify-between"><span class="text-slate-500">Demandeur :</span> <strong id="receipt-name"></strong></div>
+                <div class="flex justify-between"><span class="text-slate-500">Prestation :</span> <strong id="receipt-service"></strong></div>
+                <div class="flex justify-between"><span class="text-slate-500">Statut initial :</span> <span id="receipt-status" class="bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded text-[10px]"></span></div>
+            </div>
+
+            <div class="flex flex-col items-center justify-center p-3 bg-white rounded-2xl border border-slate-200 shadow-inner">
+                <div id="qrcode-box" class="p-2"></div>
+                <span class="text-[10px] text-slate-400 mt-1">Scanner pour vérifier l'authenticité</span>
+            </div>
+
+            <button onclick="closeModal('modal-receipt')" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition-all">
+                Fermer & Imprimer le Reçu
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div class="flex items-center gap-3">
+                <div class="w-3 h-3 tchad-flag-stripe rounded-full"></div>
+                <span><strong>E-Consulat Tchad</strong> &copy; 2026 - République du Tchad</span>
+            </div>
+            <div class="flex gap-4 text-slate-400">
+                <a href="index.html" class="hover:text-tchad-blue">Portail Institutionnel</a>
+                <span>•</span>
+                <a href="#" class="hover:text-tchad-blue">Protection des données</a>
+                <span>•</span>
+                <a href="#" class="hover:text-tchad-blue">Mentions Légales</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- APPLICATION JAVASCRIPT LOGIC -->
+    <script>
+        // State Management
+        let appState = {
+            activeModule: 'citoyen',
+            requests: [
+                { id: 'TCD-2026-8849', name: 'Youssouf Oumar', service: 'Visa', date: '11/08/2026', status: 'En cours d\'instruction', docs: 2 },
+                { id: 'TCD-2026-9021', name: 'Amina Abdelkerim', service: 'Carte Consulaire', date: '10/08/2026', status: 'Validé', docs: 3 },
+                { id: 'TCD-2026-7412', name: 'Idriss Deby Jr.', service: 'Laissez-passer', date: '09/08/2026', status: 'En attente de paiement', docs: 1 },
+                { id: 'TCD-2026-6105', name: 'Fatimé Djibrine', service: 'État Civil', date: '08/08/2026', status: 'Validé', docs: 4 }
+            ],
+            diaspora: [
+                { name: 'Dr. Brahim Mahamat', role: 'Chirurgien Cardiologue', city: 'Paris, France', sector: 'Santé' },
+                { name: 'Khadidja Ngarlem', role: 'Ingénieure en Cybersécurité', city: 'Lyon, France', sector: 'Technologies' },
+                { name: 'Abakar Souleymane', role: 'Consultant en Finance Internationale', city: 'Lille, France', sector: 'Finance' }
+            ]
+        };
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDiasporaMembers();
+            handleUrlParameters();
+        });
+
+        // URL Parameters Handler for Redirects from index.html
+        function handleUrlParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceParam = urlParams.get('service');
+            const actionParam = urlParams.get('action');
+
+            if (serviceParam) {
+                const decoded = decodeURIComponent(serviceParam);
+                const serviceMap = {
+                    'CarteConsulaire': 'Carte Consulaire',
+                    'carte': 'Carte Consulaire',
+                    'EtatCivil': 'État Civil',
+                    'etatcivil': 'État Civil',
+                    'LaissezPasser': 'Laissez-passer'
+                };
+                if (decoded.toLowerCase().includes('visa')) {
+                    window.location.href = 'https://evisa.td';
+                } else {
+                    openForm(serviceMap[decoded] || decoded);
+                }
+            }
+
+            if (actionParam === 'tracking') {
+                openModal('modal-tracking');
+            } else if (actionParam === 'rdv') {
+                openRdvModal();
+            }
+        }
+
+        // Toggle Mobile Navigation Drawer
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-sm';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-sm';
+            }
+        }
+
+        // Module Switcher Navigation
+        function switchModule(moduleName) {
+            appState.activeModule = moduleName;
+            
+            document.querySelectorAll('main > section').forEach(sec => sec.classList.add('hidden'));
+            
+            const target = document.getElementById(`module-${moduleName}`);
+            if (target) target.classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-tchad-blue', 'text-white', 'shadow-xs');
+                btn.classList.add('text-slate-600');
+            });
+            
+            const activeBtn = document.getElementById(`nav-${moduleName}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-tchad-blue', 'text-white', 'shadow-xs');
+                activeBtn.classList.remove('text-slate-600');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Render Diaspora Cards
+        function renderDiasporaMembers() {
+            const container = document.getElementById('diaspora-members-container');
+            if(!container) return;
+            container.innerHTML = appState.diaspora.map(m => `
+                <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">
+                            ${m.name.charAt(0)}
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs text-slate-900">${m.name}</div>
+                            <div class="text-[11px] text-slate-500">${m.role} • ${m.city}</div>
+                        </div>
+                    </div>
+                    <span class="text-[10px] font-bold bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-full">${m.sector}</span>
+                </div>
+            `).join('');
+        }
+
+        // Status Badge Helper
+        function getStatusBadge(status) {
+            if (status === 'Validé') return `<span class="bg-emerald-100 text-emerald-800 font-bold px-2.5 py-0.5 rounded-full text-[10px]"><i class="fa-solid fa-check"></i> Validé</span>`;
+            if (status === 'Rejeté') return `<span class="bg-rose-100 text-rose-800 font-bold px-2.5 py-0.5 rounded-full text-[10px]"><i class="fa-solid fa-xmark"></i> Rejeté</span>`;
+            if (status === 'En attente de paiement') return `<span class="bg-amber-100 text-amber-800 font-bold px-2.5 py-0.5 rounded-full text-[10px]"><i class="fa-solid fa-credit-card"></i> En attente paiement</span>`;
+            return `<span class="bg-blue-100 text-blue-800 font-bold px-2.5 py-0.5 rounded-full text-[10px]"><i class="fa-solid fa-gear animate-spin"></i> Instruction</span>`;
+        }
+
+        function openForm(serviceName) {
+            document.getElementById('form-service-type').value = serviceName;
+            document.getElementById('form-modal-title').innerText = `Demande de : ${serviceName}`;
+            openModal('modal-form');
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            const service = document.getElementById('form-service-type').value;
+            const name = document.getElementById('applicant-name').value;
+            const newId = `TCD-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+
+            const newReq = {
+                id: newId,
+                name: name,
+                service: service,
+                date: new Date().toLocaleDateString('fr-FR'),
+                status: 'En cours d\'instruction',
+                docs: 2
+            };
+
+            appState.requests.unshift(newReq);
+
+            closeModal('modal-form');
+
+            // Set Receipt Data
+            document.getElementById('receipt-ref').innerText = newId;
+            document.getElementById('receipt-name').innerText = name;
+            document.getElementById('receipt-service').innerText = service;
+            document.getElementById('receipt-status').innerText = 'En cours d\'instruction';
+
+            // Generate QR Code
+            const qrcodeBox = document.getElementById('qrcode-box');
+            qrcodeBox.innerHTML = '';
+            new QRCode(qrcodeBox, {
+                text: `E-CONSULAT-TCHAD|${newId}|${name}|${service}`,
+                width: 120,
+                height: 120
+            });
+
+            openModal('modal-receipt');
+            event.target.reset();
+        }
+
+        function searchTrackingCode() {
+            const code = document.getElementById('tracking-input-code').value.trim();
+            const resBox = document.getElementById('tracking-result');
+            const req = appState.requests.find(r => r.id.toLowerCase() === code.toLowerCase());
+
+            resBox.classList.remove('hidden');
+            if (req) {
+                resBox.innerHTML = `
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2 text-xs">
+                        <div class="flex justify-between"><span>Numéro :</span> <strong class="text-tchad-blue">${req.id}</strong></div>
+                        <div class="flex justify-between"><span>Demandeur :</span> <strong>${req.name}</strong></div>
+                        <div class="flex justify-between"><span>Service :</span> <strong>${req.service}</strong></div>
+                        <div class="flex justify-between"><span>Statut :</span> ${getStatusBadge(req.status)}</div>
+                    </div>
+                `;
+            } else {
+                resBox.innerHTML = `<div class="p-3 bg-rose-50 text-rose-700 rounded-xl text-xs font-semibold">Aucun dossier trouvé pour le code "${code}".</div>`;
+            }
+        }
+
+        function openDiasporaRegisterModal() {
+            alert("Redirection vers le formulaire sécurisé d'immatriculation au registre consulaire.");
+        }
+
+        function openRdvModal() {
+            alert("Ouverture du calendrier des créneaux de rendez-vous en présentiel.");
+        }
+
+        // Modals Toggle
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
